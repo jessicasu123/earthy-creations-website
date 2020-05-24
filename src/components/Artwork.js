@@ -19,7 +19,7 @@ export default class Artwork extends Component {
                         id={id}
                         src={image}
                         alt="product"
-                        class="product-img"
+                        className="product-img"
                     />
                     </Link>
                 </div>

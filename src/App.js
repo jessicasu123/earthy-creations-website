@@ -3,13 +3,13 @@ import './App.css';
 import { Switch, Route } from "react-router-dom"; 
 import NavBar from './components/NavBar'; 
 import Artworks from './components/Artworks'; 
-import About from './components/About'; 
-import Artists from './components/Artists'; 
-import Blog from './components/Blog'; 
-import Cart from './components/Cart'; 
-import Exhibits from './components/Exhibits'; 
-import ArtworkDetails from './components/ArtworkDetails'; 
-
+import About from './pages/About'; 
+import Artists from './pages/Artists'; 
+import Blog from './pages/Blog'; 
+import Cart from './pages/Cart'; 
+import Exhibits from './pages/Exhibits'; 
+import ArtworkDetails from './pages/ArtworkDetails'; 
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
         <Route path="/cart" component={Cart}></Route>
         <Route path="/exhibits" component={Exhibits}></Route>
       </Switch>
+      <Footer></Footer>
     </React.Fragment>
   );
 }

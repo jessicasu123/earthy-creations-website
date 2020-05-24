@@ -16,12 +16,12 @@ export default class ArtworkDetails extends Component {
                         </div>
                         <div className="column right-detail">
                             <div className="detail-description">
-                                <p class="detail-artworkTitle">{title}</p>
-                                <p class="detail-artistName">{artistName}</p>
-                                <p class="detail-size">Size</p>
-                                <hr class="detail-line"></hr>
-                                <p class="detail-price">$ {price}</p>
-                                <button class="button-addToCart">Add to Cart</button>
+                                <p className="detail-artworkTitle">{title}</p>
+                                <p className="detail-artistName">{artistName}</p>
+                                <p className="detail-size">Size</p>
+                                <hr className="detail-line"></hr>
+                                <p className="detail-price">$ {price}</p>
+                                <button className="button-addToCart">Add to Cart</button>
                             </div>
                             
                         </div>

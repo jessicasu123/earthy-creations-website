@@ -51,13 +51,15 @@ body {
 
 .container {
 	width: 100%;
-	margin: 0 auto;
+    margin: 0 auto;
+    padding-bottom: 20px; 
 }
 
 nav {
     text-align: center;
     overflow: auto; 
     padding-top: 20px; 
+    border-bottom: 1px solid rgb(221, 219, 219); 
 }
 
 nav ul {
@@ -67,16 +69,17 @@ nav ul {
 }
 
 nav li {
+    padding-top: 10px; 
     display: inline-block;
 }
 
 nav a {
-    padding-left: 30px; 
-    float: left; 
+    padding-right: 50px; 
+    /* float: left;  */
     color: rgb(139, 139, 139);
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 14px; 
+    font-size: 16px; 
 }
 
 nav a:hover {
@@ -96,12 +99,12 @@ nav a:hover {
 
 .left {
     width: 25%; 
-    padding-left: 8%; 
+    padding-left: 30px; 
 }
 
 .right {
     width: 75%; 
-    padding-right: 20px; 
+    padding-right: 30px; 
 }
 
 .left-detail {
@@ -191,7 +194,7 @@ nav a:hover {
 
 .detail-line {
     width: 60%;
-    background-color: rgb(121, 121, 121);
+    background-color: rgb(172, 170, 170);
 }
 
 .detail-size {
@@ -232,7 +235,7 @@ nav a:hover {
 }
 
 .checkBoxGroup-line {
-    color: rgb(44, 44, 44);
+    border-top: 1px solid rgb(187, 187, 187); 
     width: 80%; 
 }
 
@@ -273,7 +276,53 @@ nav a:hover {
     nav a {
         font-size: 12px; 
     }
-    .left {
-        padding-left: 5%; 
-    }
 }
+
+.logo {
+    float: left; 
+    padding-left: 30px; 
+    display: block;
+    max-height: 50px;
+    transform: translateY(-25%);
+}
+
+.cart {
+    float: right;
+    padding-right: 30px; 
+    max-height: 50px; 
+    transform: translateY(-25%);
+}
+
+.footer {
+    padding-top: 25%; 
+    margin: 0; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.footer-line {
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+    width: 100%;
+    /* margin-left: 10%;  */
+}
+
+.footer-logo {
+    padding-top:20px; 
+    width: 10%;
+}
+
+.footer-text {
+    padding-top:10px; 
+    padding-bottom: 5px; 
+}
+
+.footer-email {
+    color: rgb(125, 147, 168);
+    padding-bottom: 10px; 
+}
+
+

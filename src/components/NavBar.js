@@ -1,5 +1,7 @@
 import React, { Component } from 'react'; 
 import {Link} from 'react-router-dom'; 
+import logo from '../images/earthy-creations-logo.png';
+import cart from '../images/shopping-cart.png'; 
 
 export default class NavBar extends Component {
     render() {
@@ -7,13 +9,17 @@ export default class NavBar extends Component {
             <div className="container">
                 <nav>
                     <ul>
-                        <li><Link to="/">Earthy Creations</Link></li>
+                        <Link to="/">
+                            <img src= {logo} className="logo"/>
+                         </Link>
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/artists">Artists</Link></li>
                         <li><Link to="/shop">Shop</Link></li>
                         <li><Link to="/blog">Blog</Link></li>
                         <li><Link to="/exhibits">Exhibits</Link></li>
-                        <li><Link to="/cart">Cart</Link></li>
+                        <Link to="/cart">
+                            <img src={cart} className="cart"/>
+                        </Link>
                     </ul>
                 </nav>
             </div>
