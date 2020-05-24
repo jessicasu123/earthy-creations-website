@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react'; 
+import './CheckBox.css'; 
 
 export default class CheckBox extends Component {
     state = {

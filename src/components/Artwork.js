@@ -30,7 +30,7 @@ export default class Artwork extends Component {
                 </article>
             )}
             </ArtworkConsumer>
-          </div>
+        </div>
         );
     }
 }

@@ -1,0 +1,31 @@
+.footer {
+    padding-top: 25%; 
+    margin: 0; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.footer-line {
+    height: 1px;
+    background-color:rgb(221, 219, 219);
+    border: none;
+    width: 100%;
+    /* margin-left: 10%;  */
+}
+
+.footer-logo {
+    padding-top:20px; 
+    width: 10%;
+}
+
+.footer-text {
+    padding-top:10px; 
+    padding-bottom: 5px; 
+}
+
+.footer-email {
+    color: rgb(125, 147, 168);
+    padding-bottom: 10px; 
+}

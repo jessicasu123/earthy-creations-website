@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route } from "react-router-dom"; 
-import NavBar from './components/NavBar'; 
-import Artworks from './components/Artworks'; 
+import NavBar from './components/NavBar/NavBar'; 
+import Artworks from './pages/Artworks/Artworks'; 
 import About from './pages/About'; 
 import Artists from './pages/Artists'; 
 import Blog from './pages/Blog'; 
 import Cart from './pages/Cart'; 
 import Exhibits from './pages/Exhibits'; 
-import ArtworkDetails from './pages/ArtworkDetails'; 
-import Footer from './components/Footer';
+import ArtworkDetails from './pages/ArtworkDetails/ArtworkDetails'; 
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (

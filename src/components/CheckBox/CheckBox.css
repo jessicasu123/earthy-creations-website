@@ -1,0 +1,32 @@
+.checkBox {
+    outline: 0;
+    -webkit-appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #a9acac;
+	padding: 9px;
+	display: inline-block;
+    position: relative; 
+}
+
+.checkBox:checked {
+    outline: 0; 
+    -webkit-user-select: none;
+	border: 1px solid #adb8c0;
+	color: #393c3d;
+}
+
+.checkBox:checked:after {
+    outline: 0; 
+    content: '\2713';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+}
+
+.checkBox-label {
+    display: inline-block; 
+    font-size: 16px; 
+    padding-left: 10px; 
+    transform: translateY(-25%); 
+}

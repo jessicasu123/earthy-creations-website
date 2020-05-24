@@ -1,8 +1,8 @@
 import React, { Component } from 'react'; 
-import {ArtworkConsumer} from '../context'; 
-import Artwork from '../components/Artwork';
-import CheckBoxGroup from '../components/CheckBoxGroup'; 
-
+import {ArtworkConsumer} from '../../context'; 
+import Artwork from '../../components/Artwork';
+import CheckBoxGroup from '../../components/CheckBoxGroup/CheckBoxGroup'; 
+import './Artworks.css'; 
 
 export default class Artworks extends Component {
     state={
