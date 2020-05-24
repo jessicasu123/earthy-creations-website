@@ -25,7 +25,7 @@ export default class CheckBox extends Component {
                 <label>
                     <input 
                         type="checkbox"
-                        class="checkBox"
+                        className="checkBox"
                         value={label}
                         checked={isChecked}
                         onClick={this.toggleCheckboxChange}
