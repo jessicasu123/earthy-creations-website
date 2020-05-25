@@ -38,7 +38,14 @@ nav a:hover {
 @media screen and (max-width: 1100px) {
     nav a {
         font-size: 12px; 
+    } 
+    .logo {
+        max-height: 15px; 
     }
+    .cart {
+        max-height: 15px; 
+    }
+
 }
 
 .logo {

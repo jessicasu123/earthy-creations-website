@@ -7,7 +7,9 @@ export default class CheckBoxGroup extends Component {
         super(props); 
         this.state = {
             selectedCheckboxes: new Set(), 
-            items: this.props.items
+            type: this.props.type,
+            items: this.props.items,
+            filters: this.props.filters
         }
     }
 
@@ -23,7 +25,9 @@ export default class CheckBoxGroup extends Component {
     handleCheckBoxChoice = () => {
         for (const checkbox of this.state.selectedCheckboxes) {
             console.log(checkbox); 
+            
         }
+        this.state.filters.set(this.state.type, this.state.selectedCheckboxes); 
     }
 
     createCheckbox = label => (
@@ -43,11 +47,11 @@ export default class CheckBoxGroup extends Component {
     
     render() {
         return (
-            <div>
+           
                 <div onClick={this.handleCheckBoxChoice}>
                     {this.createCheckboxes()}
                 </div>
-            </div>
+            
         )
     }
 }

@@ -10,6 +10,7 @@ class ArtworkProvider extends Component {
     constructor() {
         super(); 
         this.state = {
+            allArtworks:[], 
             artworks:[], 
             detailedArtwork:{}
         }
@@ -24,18 +25,23 @@ class ArtworkProvider extends Component {
         }).then((response) => {
             let artworksFetch = response.items; 
             artworksFetch = artworksFetch.map((item) => {
-                const { title, price, artistName } = item.fields;
+                const { title, price, artistName, category } = item.fields;
                 const { id } = item.sys;
                 const image = item.fields.image.fields.file.url;
-                return { title, artistName, price, id, image };
+                return { title, artistName, price, id, image, category };
             });
-            this.setState({artworks: artworksFetch})
+            this.setState({artworks: artworksFetch}); 
+            this.setState({allArtworks: artworksFetch}); 
         });
     }
 
     getArtwork = (id) => {
         const artwork = this.state.artworks.find(item => item.id === id); 
         return artwork; 
+    }
+
+    updateArtworks = (newArtworks) => {
+        this.setState({artworks: newArtworks}); 
     }
 
     handleDetail = (id) => {
@@ -51,7 +57,8 @@ class ArtworkProvider extends Component {
             <div>
                 <ArtworkContext.Provider value={{
                     ...this.state,
-                    handleDetail: this.handleDetail
+                    handleDetail: this.handleDetail, 
+                    updateArtworks: this.updateArtworks
                 }}>
                     {this.props.children}
                 </ArtworkContext.Provider>
