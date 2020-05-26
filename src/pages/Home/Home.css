@@ -1,0 +1,10 @@
+.title * {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 40px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
