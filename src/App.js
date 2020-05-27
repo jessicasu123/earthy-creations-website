@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
-import { Switch, Route } from "react-router-dom"; 
-import NavBar from './components/NavBar/NavBar'; 
-import Artworks from './pages/Artworks/Artworks'; 
-import About from './pages/About'; 
-import Artists from './pages/Artists'; 
-import Blog from './pages/Blog'; 
-import Cart from './pages/Cart'; 
-import Exhibits from './pages/Exhibits'; 
-import ArtworkDetails from './pages/ArtworkDetails/ArtworkDetails'; 
+import { Switch, Route } from "react-router-dom";
+import NavBar from './components/NavBar/NavBar';
+import Artworks from './pages/Artworks/Artworks';
+import Home from './pages/Home/Home';
+import About from './pages/About';
+import Artists from './pages/Artists';
+import Blog from './pages/Blog';
+import Cart from './pages/Cart';
+import Exhibits from './pages/Exhibits';
+import ArtworkDetails from './pages/ArtworkDetails/ArtworkDetails';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/blog" component={Blog}></Route>
         <Route path="/cart" component={Cart}></Route>
         <Route path="/exhibits" component={Exhibits}></Route>
+        <Route path="/" component={Home}></Route>
       </Switch>
       <Footer></Footer>
     </React.Fragment>

@@ -3,6 +3,7 @@ import {ArtworkConsumer} from './context';
 import Artwork from '../../components/Artwork';
 import CheckBoxGroup from '../../components/CheckBoxGroup/CheckBoxGroup'; 
 import './Artworks.css'; 
+import Title from '../../components/Title/Title';
 
 export default class Artworks extends Component {
     state={
@@ -45,6 +46,9 @@ export default class Artworks extends Component {
     render() { 
         return (
             <React.Fragment>
+                <div className="title">
+                    <Title text="SHOP" color="blue" />
+                </div>
                 <div className="row">
                     <ArtworkConsumer>
                         {({updateArtworks}) => (
