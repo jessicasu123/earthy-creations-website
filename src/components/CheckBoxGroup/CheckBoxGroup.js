@@ -31,7 +31,7 @@ export default class CheckBoxGroup extends Component {
     }
 
     createCheckbox = label => (
-        <div class="checkBoxContainer">
+        <div className="checkBoxContainer">
             <CheckBox 
                 label={label}
                 handleCheckboxChange={this.toggleCheckboxSelection}
@@ -40,6 +40,8 @@ export default class CheckBoxGroup extends Component {
         </div>
     )
 
+
+
     createCheckboxes = () => (
         this.state.items.map(this.createCheckbox)
     )
@@ -47,7 +49,6 @@ export default class CheckBoxGroup extends Component {
     
     render() {
         return (
-           
                 <div onClick={this.handleCheckBoxChoice}>
                     {this.createCheckboxes()}
                 </div>

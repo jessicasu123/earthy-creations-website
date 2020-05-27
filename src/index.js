@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {BrowserRouter as Router} from 'react-router-dom';
-import {ArtworkProvider} from './context';  
+import { ArtworkProvider } from './pages/Artworks/context.js';  
 import * as serviceWorker from './serviceWorker';
 
 

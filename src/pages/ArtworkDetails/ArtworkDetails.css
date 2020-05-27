@@ -1,3 +1,13 @@
+.detail-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.detail-column {
+    float: left; 
+}
+
 .left-detail {
     padding-top: 50px; 
     width: 50%; 
@@ -16,7 +26,7 @@
     margin-left: auto; 
     margin-right: auto; 
     width: 70%;
-    height: 30rem;
+    height: 35rem;
     top: 50%; 
 }
 
@@ -68,4 +78,40 @@
     background-color: black; 
     color: white; 
     
+}
+
+@media screen and (max-width: 1200px) {
+    .detail-img { 
+        width: 80%;
+        height: 30rem;
+    }
+}
+
+
+@media screen and (max-width: 950px) {
+    .detail-column {
+        width: 100%; 
+        
+    }
+    .left-detail {
+        padding: 0; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+    }
+    .detail-img {
+        float: none; 
+    }
+    .detail-description {
+        padding:0; 
+        transform: translateX(20%); 
+    }
+    .right-detail {
+        padding: 0; 
+        width:100%;
+        /* transform: translateX(25%); */
+        
+        
+
+    }
 }

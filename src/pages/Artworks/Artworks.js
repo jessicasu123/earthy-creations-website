@@ -1,6 +1,5 @@
 import React, { Component } from 'react'; 
-import {ArtworkConsumer} from '../../context'; 
-import ArtworkProvider from '../../context'; 
+import {ArtworkConsumer} from './context'; 
 import Artwork from '../../components/Artwork';
 import CheckBoxGroup from '../../components/CheckBoxGroup/CheckBoxGroup'; 
 import './Artworks.css'; 
@@ -20,8 +19,9 @@ export default class Artworks extends Component {
             let filteredItems = []; 
             let filters = this.state.selectedFilters.get(filterType); 
             if (filters.size > 0) {
-                itemsToConsider.map((item) => {
-                    if (filters.has(item.category)) {
+                itemsToConsider.forEach((item) => {
+                    let filterChoice = this.getFilterChoiceFromFilterType(filterType, item); 
+                    if (filters.has(filterChoice)) {
                         filteredItems.push(item);
                     }
                 })
@@ -31,10 +31,18 @@ export default class Artworks extends Component {
         return itemsToConsider; 
     }
 
-
+    getFilterChoiceFromFilterType(filterType, item) {
+        switch(filterType) {
+            case "category": 
+                return item.category; 
+            case "price": 
+                return item.priceRange; 
+            default: 
+                return ""; 
+        }
+    }
     
-    render() {
-        console.log(this.state.artworks); 
+    render() { 
         return (
             <React.Fragment>
                 <div className="row">
@@ -56,10 +64,13 @@ export default class Artworks extends Component {
                         <div className="products-center">
                             <ArtworkConsumer>
                                 {value => {
-                                    if (this.state.artworks.length ===0) {
-                                        this.state.artworks = value.allArtworks;
+                                    let renderedArtworks = value.artworks; 
+                                    if (this.state.artworks.length === 0) {
+                                        //this.setState({artworks: value.allArtworks}); 
+                                        this.state.artworks = value.allArtworks; 
+                                        renderedArtworks = value.allArtworks; 
                                     }
-                                    return value.artworks.map(artwork => {
+                                    return renderedArtworks.map(artwork => {
                                         return <Artwork key={artwork.id}
                                             artwork={artwork} />;
                                     })

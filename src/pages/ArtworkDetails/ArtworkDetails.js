@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ArtworkConsumer} from '../../context'; 
+import {ArtworkConsumer} from '../Artworks/context'; 
 import './ArtworkDetails.css'; 
 
 export default class ArtworkDetails extends Component {
@@ -9,13 +9,13 @@ export default class ArtworkDetails extends Component {
                 {value => {
                     const {title, artistName, image, price} = value.detailedArtwork; 
                     return (
-                    <div className="row">
-                        <div className="column left-detail">
+                    <div className="detail-row">
+                        <div className="detail-column left-detail">
                             <div className="img-container">
                                 <img className="detail-img" alt={title} src={image}></img>
                             </div>
                         </div>
-                        <div className="column right-detail">
+                        <div className="detail-column right-detail">
                             <div className="detail-description">
                                 <p className="detail-artworkTitle">{title}</p>
                                 <p className="detail-artistName">{artistName}</p>

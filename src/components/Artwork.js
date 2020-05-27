@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import {Link} from 'react-router-dom'; 
-import { ArtworkConsumer} from "../context"; 
+import { ArtworkConsumer} from "../pages/Artworks/context"; 
 
 export default class Artwork extends Component {
     render() {

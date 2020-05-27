@@ -28,10 +28,10 @@ export default class CheckBox extends Component {
                         type="checkbox"
                         className="checkBox"
                         value={label}
-                        checked={isChecked}
+                        readOnly checked={isChecked}
                         onClick={this.toggleCheckboxChange}
                     />
-                    <div class="checkBox-label">{label} </div>
+                    <div className="checkBox-label">{label} </div>
                 </label>
                 
             </div>
