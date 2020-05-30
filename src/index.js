@@ -2,17 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter as Router} from 'react-router-dom';
-import { ArtworkProvider } from './pages/Artworks/context.js';  
+import {BrowserRouter as Router} from 'react-router-dom'; 
 import * as serviceWorker from './serviceWorker';
 
 
 ReactDOM.render(
-  <ArtworkProvider>
     <Router>
       <App />
-    </Router>
-  </ArtworkProvider>,
+    </Router>,
   document.getElementById('root')
 );
 

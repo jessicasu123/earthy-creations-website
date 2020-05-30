@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react'; 
+import { getArtworks } from '../../api.js'; 
 
 //so that multiple pages can have access to artworks 
 const ArtworkContext = React.createContext(); 
 //Provider - gives information
 //Consumer - accesses information 
-var contentful = require('contentful'); 
 
 class ArtworkProvider extends Component {
     constructor() {
@@ -16,23 +16,13 @@ class ArtworkProvider extends Component {
         }
     }
     componentDidMount() {
-        var client = contentful.createClient({
-            space: "7vckoyge62su",
-            accessToken: "zpvytqz4qKh306Me6gyA3XEitF8nklsBPREm4MjmC1s",
-        });
-        client.getEntries({
-            content_type: "artwork",
-        }).then((response) => {
-            let artworksFetch = response.items; 
-            artworksFetch = artworksFetch.map((item) => {
-                const { title, price, artistName, category, priceRange } = item.fields;
-                const { id } = item.sys;
-                const image = item.fields.image.fields.file.url;
-                return { title, artistName, price, id, image, category, priceRange };
-            });
-            this.setState({artworks: artworksFetch}); 
-            this.setState({allArtworks: artworksFetch}); 
-        });
+        getArtworks().then((response) => {
+            let artworksFetch = response; 
+            this.setState({
+                artworks: artworksFetch,
+                allArtworks: artworksFetch
+            }); 
+        })
     }
 
     getArtwork = (id) => {
@@ -47,9 +37,6 @@ class ArtworkProvider extends Component {
     handleDetail = (id) => {
         const artwork = this.getArtwork(id); 
         this.setState({ detailedArtwork: artwork });
-        // this.setState(()=> {
-        //     return {detailedArtwork:artwork}
-        // })
     }; 
 
     render() {

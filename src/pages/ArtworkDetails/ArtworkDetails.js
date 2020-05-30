@@ -1,35 +1,35 @@
 import React, { Component } from 'react'
-import {ArtworkConsumer} from '../Artworks/context'; 
 import './ArtworkDetails.css'; 
+import { Link } from 'react-router-dom'; 
 
 export default class ArtworkDetails extends Component {
     render() {
+        const { artwork } = this.props.location.state; 
         return (
-            <ArtworkConsumer>
-                {value => {
-                    const {title, artistName, image, price} = value.detailedArtwork; 
-                    return (
-                    <div className="detail-row">
-                        <div className="detail-column left-detail">
-                            <div className="img-container">
-                                <img className="detail-img" alt={title} src={image}></img>
-                            </div>
+            <div className="detail-row">
+                <div className="detail-column left-detail">
+                    <div className="img-container">
+                        <div className="navigate-shop">
+                            <Link to='/shop' className="shop-link">
+                                <p class="back-to-shop"> Shop </p>
+                            </Link>
+                            <p class="currArtworkName"> / {artwork.title} </p>
                         </div>
-                        <div className="detail-column right-detail">
-                            <div className="detail-description">
-                                <p className="detail-artworkTitle">{title}</p>
-                                <p className="detail-artistName">{artistName}</p>
-                                <p className="detail-size">Size</p>
-                                <hr className="detail-line"></hr>
-                                <p className="detail-price">$ {price}</p>
-                                <button className="button-addToCart">Add to Cart</button>
-                            </div>
-                            
-                        </div>
+                        <img className="detail-img" alt={artwork.title} src={artwork.image}></img>
                     </div>
-                    );
-                }}
-            </ArtworkConsumer>
+                </div>
+                <div className="detail-column right-detail">
+                    <div className="detail-description">
+                        <p className="detail-artworkTitle">{artwork.title}</p>
+                        <p className="detail-artistName">{artwork.artistName}</p>
+                        <p className="detail-size">Size</p>
+                        <hr className="detail-line"></hr>
+                        <p className="detail-price">$ {artwork.price}</p>
+                        <button className="button-addToCart">Add to Cart</button>
+                    </div>
+
+                </div>
+            </div>
         )
     }
 }

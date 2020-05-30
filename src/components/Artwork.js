@@ -1,35 +1,30 @@
 import React, { Component } from 'react'; 
 import {Link} from 'react-router-dom'; 
-import { ArtworkConsumer} from "../pages/Artworks/context"; 
 
 export default class Artwork extends Component {
     render() {
         const {id, image, title, artistName, price} = this.props.artwork; 
         return (
         <div>
-            <ArtworkConsumer>
-            {(value) => (
-                <article className="product">
-                <div
-                    className="img-container"
-                    onClick={() => value.handleDetail(id)}
-                >
-                    <Link to="/details">
-                    <img
-                        id={id}
-                        src={image}
-                        alt="product"
-                        className="product-img"
-                    />
+            <article className="product">
+                <div className="img-container">  
+                    <Link to={{
+                        pathname: '/details',
+                        state: {
+                            artwork: this.props.artwork
+                        }
+                    }}>
+                        <img
+                            id={id}
+                            src={image}
+                            alt="product"
+                            className="product-img" />
                     </Link>
                 </div>
-
                 <p className="artworkTitle"> {title}</p>
                 <p className="artistName"> {artistName} </p>
                 <p className="price"> $ {price} </p>
-                </article>
-            )}
-            </ArtworkConsumer>
+            </article>
         </div>
         );
     }
