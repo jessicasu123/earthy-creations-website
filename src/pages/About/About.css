@@ -1,0 +1,31 @@
+
+.backgroundBox {
+    width: 510px;
+    height: 580px;
+    background-color:rgb(191,221,215);
+    position: relative;
+    left: 735px;
+    top: -450px;
+}
+
+.backgroundImage {
+    /*padding-left: 30px;
+    display: block;*/
+    max-height: 580px;
+    position: relative;
+    left: 160px;
+    top: 50px;
+}
+
+.title {
+    padding: 0px;
+    display: block;
+    font-size: 30px;
+    transform: translate(55px, 45px);
+}
+.mission {
+    font-size: 20px;
+    transform: translate(55px, 70px);
+    width: 400px;
+    line-height: 30px;
+}
