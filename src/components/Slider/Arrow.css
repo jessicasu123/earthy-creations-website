@@ -1,0 +1,29 @@
+.arrow {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    /* width: 10px; */
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    transition: ease-in 0.1s;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+}
+
+.leftArrow {
+    width: 50px;
+}
+.leftArrow:focus {
+    outline: 0;
+}
+
+.rightArrow {
+    width: 50px;
+}
+.rightArrow:focus {
+    outline: 0;
+}

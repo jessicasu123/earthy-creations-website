@@ -7,4 +7,15 @@
 .title {
     display: flex;
     justify-content: center;
+    margin-bottom: 35px;
+}
+
+.centerParagraph {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.centerParagraph * {
+    width: 45vw;
 }

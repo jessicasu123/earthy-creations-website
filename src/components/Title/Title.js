@@ -20,7 +20,7 @@ export default class Title extends Component {
 
     render() {
         return (
-            <div class="rel" ref={ (divElement) => { this.divElement = divElement } }>
+            <div className="rel" ref={ (divElement) => { this.divElement = divElement } }>
                 <p>{this.props.text}</p>
                 <OverlapBoxes height={this.state.height * 0.45} width={this.state.width * 0.8} backgroundColor={this.props.color}/>
             </div>
