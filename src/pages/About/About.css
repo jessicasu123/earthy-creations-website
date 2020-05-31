@@ -1,10 +1,18 @@
-.title * {
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 40px;
+
+.backgroundBox {
+    width: 510px;
+    height: 580px;
+    background-color:rgb(191,221,215);
+    position: relative;
+    left: 735px;
+    top: -450px;
 }
 
-.title {
-    display: flex;
-    justify-content: center;
+.backgroundImage {
+    /*padding-left: 30px;
+    display: block;*/
+    max-height: 580px;
+    position: relative;
+    left: 160px;
+    top: 50px;
 }
