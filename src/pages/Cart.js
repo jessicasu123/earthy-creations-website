@@ -1,11 +1,37 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react'; 
+import CartItem from '../components/CartItem/CartItem'; 
+import Title from '../components/Title/Title';
 
 export default class Cart extends Component {
+    constructor(props) {
+        super(props); 
+        this.state = {
+            cartItems: JSON.parse(localStorage.getItem('cart')), 
+        }
+        this.updateCartItems = this.updateCartItems.bind(this); 
+    }
+
+    updateCartItems(newCartItems) {
+        this.setState({cartItems: newCartItems});
+    }
+
+    showCartItems = () => (
+        this.state.cartItems.map(this.createCartItem)
+    )
+
+    createCartItem = cartItem => (
+        <CartItem key={cartItem.artwork.id} artwork={cartItem.artwork} updateCartItems={this.updateCartItems}/>
+    )
     render() {
         return (
-            <div>
-                <h1>hello from cart</h1>
-            </div>
+            <React.Fragment>
+                <div className="title">
+                    <Title text="CART" color="blue" />
+                </div>
+                <div>
+                    {this.showCartItems()}
+                </div>
+            </React.Fragment>
         )
     }
 }

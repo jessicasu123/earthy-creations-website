@@ -20,7 +20,7 @@ export default class SearchField extends Component {
     }
     render() {
         return (
-            <div class="search-field">
+            <div className="search-field">
                 <input type="text" placeholder={this.props.placeholder} onChange={this.handleChange}/>
             </div>
         )
