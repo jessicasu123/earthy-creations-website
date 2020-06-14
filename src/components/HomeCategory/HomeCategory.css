@@ -1,0 +1,25 @@
+.homeCategory {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 30px;
+    transition: 0.25s;
+}
+
+.homeCategory:hover {
+    opacity: 0.5;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.homeCategory div {
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}

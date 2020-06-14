@@ -1,0 +1,76 @@
+.materials div div {
+    position: absolute;
+    font-weight: bolder;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: 0.15s;
+}
+
+.paper {
+    width: 170px;
+    height: 80px;
+    left: 0px;
+    top: 140px;
+    background-color: rgb(180,206,229);
+}
+
+.glass {
+    background-color: rgb(191,221,215);
+    width: 250px;
+    height: 160px;
+    top: 50px;
+    left: 180px;
+}
+
+.plastic {
+    background-color: rgb(250,219,198);
+    width: 210px;
+    height: 60px;
+    right: 0px;
+    top: 150px;
+    border: 5px solid white;
+}
+
+.metal {
+    background-color: rgb(245,240,196);
+    width: 200px;
+    height: 60px;
+    left: 70px;
+    bottom: 100px;
+    left: 110px;
+}
+
+.wood {
+    background-color: rgb(250,218,233);
+    width: 180px;
+    height: 120px;
+    bottom: 50px;
+    left: 320px;
+}
+
+.materials div .browseMaterials {
+    font-size: 40px;
+    font-weight: lighter;
+    top: 230px;
+    left: 10px;
+    color: black;
+    width: 600px;
+    height: 0px;
+    letter-spacing: 2px;
+}
+
+.materials .browseParent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.materialsTop div:hover, .materialsBottom div:hover {
+    transition: 0.15s;
+    opacity: 0.7;
+    cursor: pointer;
+    /* color: black; */
+}
