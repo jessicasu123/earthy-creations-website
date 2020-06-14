@@ -1,0 +1,62 @@
+.cart-container {
+    margin-top: 10px; 
+    margin-left: 30px; 
+    margin-right: 30px;
+    height: 175px;  
+    border-bottom: 1px solid rgb(165, 160, 160);
+}
+
+.cart-product-image { 
+    display: inline-block;
+    margin-left: 20px; 
+    height: 150px; 
+    width: 150px; 
+}
+
+.cart-text-container {
+    margin-top: 10px; 
+    display: inline-block;
+    margin-left: 30px; 
+    text-align: left; 
+    vertical-align: top;
+}
+
+.cart-artwork-name {
+    font-size: 30px;
+    margin-bottom: 3px; 
+}
+
+.cart-artist-name {
+    font-size: 20px; 
+    font-style: italic; 
+    margin-bottom: 18px; 
+}
+
+.cart-size-quantity {
+    font-size: 16px; 
+}
+
+.cart-size-label {
+    margin-bottom: 5px; 
+}
+
+.cart-remove-price-container {
+    vertical-align: top;
+    text-align: right;
+    margin-top: 10px; 
+    float: right; 
+    margin-right: 30px; 
+}
+
+.cart-remove-label {
+    margin-top: 10px; 
+    color: #C7C7C7; 
+    font-size: 16px; 
+    cursor: pointer; 
+}
+
+.cart-price-label {
+    font-size: 18px; 
+    margin-top: 75px; 
+    font-weight: 500;
+}
