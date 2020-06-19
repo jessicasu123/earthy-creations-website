@@ -1,12 +1,13 @@
 import React, { Component } from 'react'; 
 import CartItem from '../components/CartItem/CartItem'; 
 import Title from '../components/Title/Title';
+import constants from '../constants.json'; 
 
 export default class Cart extends Component {
     constructor(props) {
         super(props); 
         this.state = {
-            cartItems: JSON.parse(localStorage.getItem('cart')), 
+            cartItems: JSON.parse(localStorage.getItem(constants.local_storage_cart_key)), 
         }
         this.updateCartItems = this.updateCartItems.bind(this); 
     }
