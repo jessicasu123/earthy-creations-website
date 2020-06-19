@@ -3,20 +3,20 @@ import './SearchField.css'
 
 export default class SearchField extends Component {
     constructor(props) {
-        super(props); 
+        super(props);
         this.state = {
             value: ''
-        }; 
+        };
 
-        this.handleChange = this.handleChange.bind(this); 
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
-        const {processSearch} = this.props; 
+        const {processSearch} = this.props;
         let text = event.target.value
-        this.setState({value: text}); 
-        
-        processSearch(text); 
+        this.setState({value: text});
+
+        processSearch(text);
     }
     render() {
         return (

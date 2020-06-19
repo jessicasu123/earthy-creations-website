@@ -1,0 +1,47 @@
+.exhibition {
+    width: 67vw;
+    height: 35vw;
+    position: relative;
+}
+
+.exhibitionBox {
+    width: 15vw;
+    height: 15vw;
+    background-color: rgb(191,221,215);
+    position: absolute;
+    bottom: 0vw;
+    right: 0px;
+}
+
+.exhibitionImage {
+    width: 30vw;
+    height: 30vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.exhibitionName {
+    width: 40vw;
+    height: 9vw;
+    opacity: 0.7;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0vw;
+    top: 13vw;
+}
+
+.exhibitions {
+    font-size: 34px;
+}
+
+.exhibitionsName {
+    font-size: 18px;
+}
