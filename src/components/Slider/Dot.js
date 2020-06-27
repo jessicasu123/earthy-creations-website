@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import './Dot.css';
 
 export default class Dot extends Component {
-    constructor(props){
-        super(props);
-    }
-
     render() {
         const styling = {background: this.props.curr ? "gray" : "white"};
         return (

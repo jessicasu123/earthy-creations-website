@@ -1,0 +1,24 @@
+.shopButton {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+}
+
+.shopButton button {
+    height: 40px;
+    width: 150px;
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    font-weight: normal;
+    color: white;
+    border: 1px white solid;
+}
+
+.shopButton button:hover {
+    cursor: pointer;
+}
+
+.shopButton button:focus {
+    outline: none;
+}

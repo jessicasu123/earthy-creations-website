@@ -3,10 +3,6 @@ import './SliderContent.css';
 import Slide from './Slide.js'
 
 export default class SliderContent extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     getWidth() {
         return this.props.width / this.props.slides.length;
     }

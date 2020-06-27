@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import "./Slide.css"
 
 export default class Slide extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         const styling = {
             backgroundImage: "url(" + this.props.content + ")",

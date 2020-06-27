@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import './OverlapBoxes.css';
 
 export default class OverlapBoxes extends Component {
-    constructor(props){
-        super(props)
-    }
-
     render() {
         var color = "rgb(255,255,255)";
         if(this.props.backgroundColor === "green"){

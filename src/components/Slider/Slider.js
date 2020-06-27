@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import "./Slider.css";
-import SliderContent from './SliderContent'
-import Slide from './Slide'
-import Arrow from './Arrow'
-import Dots from './Dots'
+import SliderContent from './SliderContent';
+import Arrow from './Arrow';
+import Dots from './Dots';
+import ShopButton from './ShopButton';
 
 export default class Slider extends Component {
     constructor(props) {
@@ -91,6 +91,7 @@ export default class Slider extends Component {
                     }}
                 />
                 <Dots slides={this.props.slides} currIndex={this.state.currIndex} handleClick={this.changeSlide} />
+                <ShopButton />
             </div>
         );
     }
