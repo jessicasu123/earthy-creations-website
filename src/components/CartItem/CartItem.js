@@ -29,7 +29,7 @@ export default class CartItem extends Component {
                 <div className="cart-text-container">
                     <p className="cart-artwork-name">{this.state.artwork.title}</p>
                     <p className="cart-artist-name">{this.state.artwork.artistName}</p>
-                    <div className="cart-style-quantity">
+                    <div className="cart-size-quantity">
                         <p className="cart-size-label">Size</p>
                         <p>Qty: 1</p>
                     </div>

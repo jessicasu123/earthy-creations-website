@@ -25,6 +25,7 @@ class Artworks extends Component {
 
     filterArtworks() {
         let itemsToConsider = this.state.allArtworks;
+        console.log(this.state.selectedFilters); 
         for (let filterType of this.state.selectedFilters.keys()) {
             let filteredItems = [];
             let filters = this.state.selectedFilters.get(filterType);
@@ -38,20 +39,24 @@ class Artworks extends Component {
                 itemsToConsider = filteredItems;
             }
         }
+        console.log(itemsToConsider); 
         this.setState({artworks: itemsToConsider});
+        console.log(this.state.artworks); 
     }
 
     searchArtworks = searchText => {
         if (!searchText) {
             this.filterArtworks();
-        }
-        let matchingArtworks = []
-        this.state.allArtworks.forEach((artwork) => {
+        } else {
+            let matchingArtworks = []
+        this.state.artworks.forEach((artwork) => {
             if (artwork.title.toLowerCase().includes(searchText.toLowerCase())) {
                 matchingArtworks.push(artwork);
             }
         });
         this.setState({ artworks: matchingArtworks });
+        }
+        
     }
 
     getFilterChoiceFromFilterType(filterType, item) {
@@ -70,6 +75,7 @@ class Artworks extends Component {
     )
 
     showArtworks = () => (
+        console.log(this.state.artworks),
         this.state.artworks.map(this.createArtwork)
     )
 

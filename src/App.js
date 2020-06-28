@@ -7,7 +7,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Artists from './pages/Artists';
 import Blog from './pages/Blog';
-import Cart from './pages/Cart';
+import Cart from './pages/Cart/Cart';
 import Exhibits from './pages/Exhibits';
 import ArtworkDetails from './pages/ArtworkDetails/ArtworkDetails';
 import Footer from './components/Footer/Footer';
