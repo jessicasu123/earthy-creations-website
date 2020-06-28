@@ -12,7 +12,7 @@ export default class OverlapBoxes extends Component {
             color = "rgb(191,221,215)";
         }
         else if(this.props.backgroundColor === "yellow"){
-            color = "rgb(247,247,224)";
+            color = "rgb(245,240,196)";
         }
         else if(this.props.backgroundColor === "orange"){
             color = "rgb(250,219,198)";

@@ -1,0 +1,45 @@
+.spotlight {
+    width: 67vw;
+    height: 35vw;
+    position: relative;
+}
+
+.spotlightBox {
+    width: 15vw;
+    height: 15vw;
+    background-color: rgb(191,221,215);
+    position: absolute;
+}
+
+.spotlightArtist {
+    width: 30vw;
+    height: 30vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.spotlightName {
+    width: 40vw;
+    height: 9vw;
+    opacity: 0.7;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    right: 0vw;
+    top: 10vw;
+}
+
+.artistSpotlight {
+    font-size: 32px;
+}
+
+.artistSpotlightName {
+    font-size: 16px;
+}
