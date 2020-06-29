@@ -18,7 +18,6 @@ export default class Modal extends Component {
             return null; 
         }
         const { artwork } = this.props.artwork; 
-        console.log(artwork); 
         return (
             <div className="modal-container">
                 <div className="modal-close" onClick={this.closeModal}></div>

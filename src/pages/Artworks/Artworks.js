@@ -12,6 +12,7 @@ class Artworks extends Component {
         artworks:[],
         categories: ["Sculpture", "Paintings", "Room Decor", "Reusable Products", "Merch"],
         prices: ["$0 - $100", "$100 - $500", "$500 - $1000", "$1000+"],
+        materials: ["Glass", "Paper", "Plastic", "Wood", "Metal"],
         selectedFilters: new Map(),
         allArtworks:[],
         beforeSearchArtworks:[]
@@ -24,24 +25,23 @@ class Artworks extends Component {
     }
 
     filterArtworks() {
-        let itemsToConsider = this.state.allArtworks;
-        console.log(this.state.selectedFilters); 
+        let itemsToConsider = this.state.allArtworks; 
         for (let filterType of this.state.selectedFilters.keys()) {
             let filteredItems = [];
             let filters = this.state.selectedFilters.get(filterType);
             if (filters.size > 0) {
                 itemsToConsider.forEach((item) => {
-                    let filterChoice = this.getFilterChoiceFromFilterType(filterType, item);
-                    if (filters.has(filterChoice)) {
-                        filteredItems.push(item);
+                    let artworkValue = this.getArtworkValueFromFilterType(filterType, item);
+                    let allArtworkValues = new Set(artworkValue.split(",")); 
+                    let intersect = new Set([...filters].filter(i => allArtworkValues.has(i)));
+                    if (intersect.size > 0) {
+                        filteredItems.push(item); 
                     }
                 })
                 itemsToConsider = filteredItems;
             }
         }
-        console.log(itemsToConsider); 
         this.setState({artworks: itemsToConsider});
-        console.log(this.state.artworks); 
     }
 
     searchArtworks = searchText => {
@@ -59,12 +59,14 @@ class Artworks extends Component {
         
     }
 
-    getFilterChoiceFromFilterType(filterType, item) {
+    getArtworkValueFromFilterType(filterType, item) {
         switch(filterType) {
             case "category":
                 return item.category;
             case "price":
                 return item.priceRange;
+            case "materials": 
+                return item.materials; 
             default:
                 return "";
         }
@@ -75,12 +77,10 @@ class Artworks extends Component {
     )
 
     showArtworks = () => (
-        console.log(this.state.artworks),
         this.state.artworks.map(this.createArtwork)
     )
 
     render() {
-        // console.log(this.props.location.state.category);
         return (
             <React.Fragment>
                 <div className="title">
@@ -92,8 +92,10 @@ class Artworks extends Component {
                         <div onChange={(e) => {this.filterArtworks()}}>
                             <p className="checkBoxGroup-label"> Categories </p>
                             <hr className="checkBoxGroup-line" />
-                            <CheckBoxGroup type="category" items={this.state.categories} filters={this.state.selectedFilters} add={this.props.location.state ? this.props.location.state.category : ''}
-                            />
+                            <CheckBoxGroup type="category" items={this.state.categories} filters={this.state.selectedFilters} add={this.props.location.state ? this.props.location.state.category : ''}/>
+                            <p className="checkBoxGroup-label"> Materials </p>
+                            <hr className="checkBoxGroup-line" />
+                            <CheckBoxGroup type="materials" items={this.state.materials} filters={this.state.selectedFilters}/>
                             <p className="checkBoxGroup-label"> Prices </p>
                             <hr className="checkBoxGroup-line" />
                             <CheckBoxGroup type="price" items={this.state.prices} filters={this.state.selectedFilters} />
