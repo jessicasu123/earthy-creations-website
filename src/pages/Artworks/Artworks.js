@@ -86,7 +86,7 @@ class Artworks extends Component {
                 <div className="title">
                     <Title text="SHOP" color="blue" />
                 </div>
-                <div className="row">
+                <div className="artworks-row">
                     <div className="column left">
                         <SearchField processSearch={this.searchArtworks} placeholder="Search Artworks"/>
                         <div onChange={(e) => {this.filterArtworks()}}>
