@@ -1,6 +1,8 @@
 import React, { Component } from 'react'; 
 import './CartItem.css';
+import constants from '../../constants.json'; 
 
+const LOCAL_STORAGE_CART_KEY = constants.local_storage_cart_key; 
 export default class CartItem extends Component {
     constructor(props) {
         super(props); 
@@ -11,13 +13,13 @@ export default class CartItem extends Component {
     }
 
     removeItemFromCart() {
-        const cartItemsJSON = JSON.parse(localStorage.getItem('cart')); 
+        const cartItemsJSON = JSON.parse(localStorage.getItem(LOCAL_STORAGE_CART_KEY)); 
         const currArtwork = this.state.artwork; 
         let filteredCartItems = cartItemsJSON.filter(function (item) {
             return !(item.artwork.title===currArtwork.title); 
         }); 
-        localStorage.setItem('cart', JSON.stringify(filteredCartItems)); 
-        this.state.updateCartItems(JSON.parse(localStorage.getItem('cart'))); 
+        localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(filteredCartItems)); 
+        this.state.updateCartItems(JSON.parse(localStorage.getItem(LOCAL_STORAGE_CART_KEY))); 
     }
 
     render() {
@@ -27,7 +29,7 @@ export default class CartItem extends Component {
                 <div className="cart-text-container">
                     <p className="cart-artwork-name">{this.state.artwork.title}</p>
                     <p className="cart-artist-name">{this.state.artwork.artistName}</p>
-                    <div className="cart-style-quantity">
+                    <div className="cart-size-quantity">
                         <p className="cart-size-label">Size</p>
                         <p>Qty: 1</p>
                     </div>

@@ -33,12 +33,10 @@ export default class CheckBoxGroup extends Component {
     }
 
     handleCheckBoxChoice = () => {
-        for (const checkbox of this.state.selectedCheckboxes) {
-            console.log(checkbox);
-        }
+        // for (const checkbox of this.state.selectedCheckboxes) {
+        //     console.log(checkbox);
+        // }
         this.state.filters.set(this.state.type, this.state.selectedCheckboxes);
-        console.log('filters', this.state.filters);
-        console.log('selected', this.state.selectedCheckboxes);
     }
 
     createCheckbox = (label) => (
