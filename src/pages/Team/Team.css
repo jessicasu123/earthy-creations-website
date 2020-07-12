@@ -81,8 +81,60 @@
 
 .kat{
     position: relative;
-    top: -250px;
-    left: -110px
+    top: -220px;
+    left: -110px;
+}
+.kat-h{
+    border-bottom: 1px solid black;
+    position: relative;
+    width: 120px;
+    top: -330px;
+    left: -60px;
+}
+.kat-v{
+    border-left: 1px solid black;
+    position:relative;
+    height: 60px;
+    top: -330px;
+    left: -60px;
+}
+.bella{
+    position: relative;
+    top: -350px;
+    left: 370px;
+}
+.bella-h{
+    border-bottom: 1px solid black;
+    position: relative;
+    width: 100px;
+    top: -380px;
+    left: 260px;
+}
+.bella-v{
+    border-left: 1px solid black;
+    position:relative;
+    height: 60px;
+    top: -380px;
+    left: 260px;
+}
+.abby{
+    position: relative;
+    top: -220px;
+    left: 350px
+}
+.abby-h{
+    border-bottom: 1px solid black;
+    position: relative;
+    width: 150px;
+    top: -330px;
+    left: 271px;
+}
+.abby-v{
+    border-left: 1px solid black;
+    position:relative;
+    height: 60px;
+    top: -330px;
+    left: 420px;
 }
 
 .duke{

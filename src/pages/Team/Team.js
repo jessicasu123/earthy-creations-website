@@ -25,16 +25,25 @@ export default class Team extends Component {
                         <img src= {kat} alt="kat" className="team_img"/>
                         <span class="name kat">Kat Beben</span>
                         <span class="role kat">Co-founder</span>
+                        <div class="kat-h line"></div>
+                        <div class="kat-v line"></div>
+                        
                     </div>
                     <div className="person" id="bella-box">
                         <img src= {bella} alt="bella" className="team_img"/>
                         <span class="name bella">Bella Almeida</span>
                         <span class="role bella">Founder</span>
+                        <div class="bella-h line"></div>
+                        <div class="bella-v line"></div>
+                        
                     </div>
                     <div className="person" id="abby-box">
                         <img src= {abby} alt="abby" className="team_img"/>
                         <span class="name abby">Abby Shlesinger</span>
                         <span class="role abby">Co-founder</span>
+                        <div class="abby-h line"></div>
+                        <div class="abby-v line"></div>
+                        
                     </div>
                     
                 </div>
@@ -51,7 +60,7 @@ export default class Team extends Component {
                 </div>
 
 
-               <div>
+               {/*<div>
                     <div className="kat-d"> 
                         <span class="name">Kat Beben</span>
                         <span class="role">Co-founder</span>
@@ -65,7 +74,7 @@ export default class Team extends Component {
                         <span class="role">Co-founder</span>
                     </div>
                 
-               </div>
+               </div>*/}
                 
 
                 <div className="title">
