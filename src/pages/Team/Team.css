@@ -30,18 +30,18 @@
 }
 #pinkBox{
     position: relative;
-    top: -100px;
+    top: -125px;
     left: 80px;
     z-index: 0;
 }
 #orangeBox{
     position: relative;
-    top: 0px;
+    top: -25px;
     z-index:1;
 }
 #yellowBox{
     position: relative;
-    top: -100px;
+    top: -125px;
     left: -120px;
     z-index: 2;
 }
@@ -136,7 +136,28 @@
     top: -330px;
     left: 420px;
 }
-
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: inline-block;
+  }
+.kat-dot{
+    position: relative;
+    top: -398px;
+    left: 58px;
+}
+.bella-dot{
+    position: relative;
+    top: -392px;
+    left: 253px;
+}
+.abby-dot{
+    position: relative;
+    top: -398px;
+    left: 260px;
+}
 .duke{
     width: 5%;
     margin-left: 32%;
@@ -160,5 +181,8 @@
 .group{
     margin-left: 25%;
     width: 50%;
-    margin-top: 5%;
+    margin-top: 7%;
+}
+#partnerTitle{
+    margin-top: 2%;
 }
