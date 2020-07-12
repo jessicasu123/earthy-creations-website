@@ -1,34 +1,23 @@
-.detail-row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
-.detail-column {
-    float: left; 
+.detail-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .left-detail {
     padding-top: 50px; 
-    width: 50%; 
-    padding-left: 15%;
 }
 
 .right-detail {
-    padding-top: 100px; 
-    width: 50%; 
-    padding-right: 20px; 
+    padding-top: 150px; 
+    margin-left: 20px;
 }
 
 .detail-img {
-    /* float: right;  */
     display: block;
-    /* margin-left: auto; 
-    margin-right: auto;   */
-    /* padding-left: 50px; */
-    width: 100%;
-    height: 35rem;
-    top: 50%; 
+    width: 500px;
+    height: 500px;
 }
 
 .detail-description {
@@ -36,23 +25,21 @@
 }
 
 .detail-artworkTitle {
-    padding-top: 50px; 
-    padding-bottom: 15px; 
+    margin-bottom: 15px; 
     font-size: 35px; 
 }
 
 .detail-artistName {
     font-size: 22px; 
     font-style: italic; 
-    padding-bottom: 10px; 
+    margin-bottom: 10px; 
 }
 
 .detail-line {
-    width: 60%;
+    width: 300px;
     height: 1px;
     background-color:rgb(221, 219, 219);
     border: none;
-    /* border-top: 1px solid rgb(221, 219, 219); */
 }
 
 .detail-size {
@@ -63,8 +50,8 @@
 
 .detail-price {
     font-size: 28px; 
-    padding-top: 30px; 
-    padding-bottom: 50px; 
+    margin-top: 30px; 
+    margin-bottom: 50px; 
 }
 
 .button-addToCart { 
@@ -72,7 +59,7 @@
     font-family: "Avenir", sans-serif;
     font-size: 18px; 
     padding: 20px; 
-    width: 60%; 
+    width: 300px; 
     background-color: white; 
     cursor: pointer;
 }
@@ -110,13 +97,39 @@
     color: gray;
 }
 
-@media screen and (max-width: 1200px) {
-    .left-detail { 
-        padding-left: 10%;
+@media screen and (max-width: 800px) {
+    .detail-row {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .left-detail {
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .right-detail {
+        width: 500px;
+        padding-top: 20px;
+        margin-right: auto;
+        margin-left:auto;
+    }
+
+    .detail-line {
+        width: 100%;
+    }
+    .button-addToCart {
+        width: 100%;
     }
 }
 
-@media screen and (max-width: 950px) {
+/* @media screen and (max-width: 1200px) {
+    .left-detail { 
+        padding-left: 10%;
+    }
+} */
+
+/* @media screen and (max-width: 950px) {
     .detail-column {
         width: 100%; 
         
@@ -137,7 +150,6 @@
     .right-detail {
         padding: 0; 
         width:100%;
-        /* transform: translateX(25%); */
-
+       
     }
-}
+} */

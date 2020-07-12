@@ -7,28 +7,32 @@ defaultClient.basePath = "https://connect.squareupsandbox.com";
 var oauth2 = defaultClient.authentications['oauth2']; 
 oauth2.accessToken = "EAAAEIl5BeRIyLFV5_okgj0DXDMD2n2jdDQ5ECk8Q1HFhKNEQ3hFkfRyZKPPnFxV";
 
-export async function createCheckout() {
+const { v4: uuidv4 } = require("uuid");
+
+export async function createCheckout(cartItems) {
     var checkoutAPI = new SquareConnect.CheckoutApi(); 
     var locationID = "YGCX8C4F4A8QB";
     let checkout_URL = ''; 
 
-    const unique_key =
-        Math.random().toString(36).substring(2, 15) +
-        Math.random().toString(36).substring(2, 15);
+    const unique_key = uuidv4();
+
+    let lineItems = cartItems.map((cartItem) => {
+        return {
+            name: cartItem.artwork.title,
+            quantity: "1",
+            base_price_money: {
+                amount: cartItem.artwork.price * 100,
+                currency: "USD",
+            },
+        };
+    });
+
+    console.log(lineItems);
 
     const request_body = {
         idempotency_key: unique_key,
         order: {
-        line_items: [
-            {
-            name: "Printed T Shirt",
-            quantity: "2",
-            base_price_money: {
-                amount: 1200,
-                currency: "USD",
-            },
-            },
-        ],
+        line_items: lineItems,
         },
         ask_for_shipping_address: true,
     };

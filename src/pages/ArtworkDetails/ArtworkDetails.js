@@ -44,8 +44,7 @@ export default class ArtworkDetails extends Component {
         return (
             <div>
                 <div className="detail-row">
-                <div className="detail-column left-detail">
-                    <div className="img-container">
+                    <div className="left-detail">
                         <div className="navigate-shop">
                             <Link to='/shop' className="shop-link">
                                 <p className="back-to-shop"> Shop </p>
@@ -54,19 +53,15 @@ export default class ArtworkDetails extends Component {
                         </div>
                         <img className="detail-img" alt={artwork.title} src={artwork.image}></img>
                     </div>
-                </div>
-                <div className="detail-column right-detail">
-                    <div className="detail-description">
-                        <p className="detail-artworkTitle">{artwork.title}</p>
-                        <p className="detail-artistName">{artwork.artistName}</p>
-                        <p className="detail-size">Size</p>
-                        <hr className="detail-line"></hr>
-                        <p className="detail-price">$ {artwork.price}</p>
-                        <button className="button-addToCart" onClick={(e) => { this.addToCart()}}>Add to Cart</button>
-                        
+                    <div className="right-detail">
+                            <p className="detail-artworkTitle">{artwork.title}</p>
+                            <p className="detail-artistName">{artwork.artistName}</p>
+                            <p className="detail-size">Size</p>
+                            <hr className="detail-line"></hr>
+                            <p className="detail-price">$ {artwork.price}</p>
+                            <button className="button-addToCart" onClick={(e) => { this.addToCart()}}>Add to Cart</button>
                     </div>
                 </div>
-            </div>
             <Modal modalText={this.state.modalText} buttonText="View Cart" show={this.state.showAddToCartModal} onClose={this.closeModal}
             artwork={this.state.artwork}/>
             </div>

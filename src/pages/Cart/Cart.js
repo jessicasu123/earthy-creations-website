@@ -33,8 +33,16 @@ export default class Cart extends Component {
         <CartItem key={cartItem.artwork.id} artwork={cartItem.artwork} updateCartItems={this.updateCartItems}/>
     )
 
+    checkoutSummary = () => (
+        <div className="checkout-summary">
+            <div className="checkout-summary-label">Checkout Summary</div>
+            <div className="checkout-total-label">Total: $ {this.getCartTotal()} </div>
+            <button className="checkout-button" onClick={(e) => { this.redirectToCheckout() }}>Checkout</button>
+        </div>
+    )
+
     redirectToCheckout() {
-        createCheckout().then((checkoutURL) => {
+        createCheckout(this.state.cartItems).then((checkoutURL) => {
             console.log(checkoutURL); 
             //window.location.href = checkoutURL; 
         })
@@ -48,11 +56,7 @@ export default class Cart extends Component {
                 </div>
                 <div className="cart-page">
                     {this.showCartItems()}
-                    <div className="checkout-summary">
-                        <div className="checkout-summary-label">Checkout Summary</div>
-                    <div className="checkout-total-label">Total: $ {this.getCartTotal()} </div>
-                    <button className="checkout-button" onClick={(e) => { this.redirectToCheckout()}}>Checkout</button>
-                    </div>
+                    {this.state.cartItems.length > 0 && this.checkoutSummary()}
                 </div>
             </React.Fragment>
         )
