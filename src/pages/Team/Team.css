@@ -1,0 +1,112 @@
+/*.bella{
+    width: 20%;
+    margin-left: 14%;
+    margin-right: 3%;
+}
+.kat{
+    width: 20%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.abby{
+    width: 20%;
+    margin-left: 3%;
+    margin-right: 5%;
+}*/
+.row{
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+.person {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 5%;
+    flex: 33.33%;
+}
+#pinkBox{
+    position: relative;
+    top: -100px;
+    left: 80px;
+    z-index: 0;
+}
+#orangeBox{
+    position: relative;
+    top: 0px;
+    z-index:1;
+}
+#yellowBox{
+    position: relative;
+    top: -100px;
+    left: -120px;
+    z-index: 2;
+}
+
+#bella-box{
+    position: relative;
+    top: 0px;
+    z-index: 5;
+}
+#kat-box{
+    position: relative;
+    top: 100px;
+    left: 100px;
+    z-index: 4;
+}
+#abby-box{
+    position: relative;
+    top: 100px;
+    left: -100px;
+    z-index: 3;
+}
+
+.team_img{
+    width: 100%;
+    
+    display: block;
+}
+.name {
+    display: block;
+    padding-top: 10px;
+    font-size: 20px;
+    /*font-weight: bold;*/
+}
+.role {
+    display: block;
+}
+
+.kat{
+    position: relative;
+    top: -250px;
+    left: -110px
+}
+
+.duke{
+    width: 5%;
+    margin-left: 32%;
+    margin-right: 3%;
+}
+.sullfdn{
+    width: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.olsenk{
+    width: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.tulane{
+    width: 5%;
+    margin-left: 3%;
+    margin-right: 5%;
+}
+.group{
+    margin-left: 25%;
+    width: 50%;
+    margin-top: 5%;
+}
