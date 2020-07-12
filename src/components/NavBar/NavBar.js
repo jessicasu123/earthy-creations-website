@@ -14,6 +14,7 @@ export default class NavBar extends Component {
                             <img src= {logo} alt="logo" className="logo"/>
                         </Link>
                         <li><Link to="/about">About</Link></li>
+                        <li><Link to="/team">Meet Our Team</Link></li>
                         <li><Link to="/artists">Artists</Link></li>
                         <li><Link to={{
                             pathname: '/shop',

@@ -1,0 +1,188 @@
+/*.bella{
+    width: 20%;
+    margin-left: 14%;
+    margin-right: 3%;
+}
+.kat{
+    width: 20%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.abby{
+    width: 20%;
+    margin-left: 3%;
+    margin-right: 5%;
+}*/
+.row{
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+.person {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 5%;
+    flex: 33.33%;
+}
+#pinkBox{
+    position: relative;
+    top: -125px;
+    left: 80px;
+    z-index: 0;
+}
+#orangeBox{
+    position: relative;
+    top: -25px;
+    z-index:1;
+}
+#yellowBox{
+    position: relative;
+    top: -125px;
+    left: -120px;
+    z-index: 2;
+}
+
+#bella-box{
+    position: relative;
+    top: 0px;
+    z-index: 5;
+}
+#kat-box{
+    position: relative;
+    top: 100px;
+    left: 100px;
+    z-index: 4;
+}
+#abby-box{
+    position: relative;
+    top: 100px;
+    left: -100px;
+    z-index: 3;
+}
+
+.team_img{
+    width: 100%;
+    
+    display: block;
+}
+.name {
+    display: block;
+    padding-top: 10px;
+    font-size: 20px;
+    /*font-weight: bold;*/
+}
+.role {
+    display: block;
+}
+
+.kat{
+    position: relative;
+    top: -220px;
+    left: -110px;
+}
+.kat-h{
+    border-bottom: 1px solid black;
+    position: relative;
+    width: 120px;
+    top: -330px;
+    left: -60px;
+}
+.kat-v{
+    border-left: 1px solid black;
+    position:relative;
+    height: 60px;
+    top: -330px;
+    left: -60px;
+}
+.bella{
+    position: relative;
+    top: -350px;
+    left: 370px;
+}
+.bella-h{
+    border-bottom: 1px solid black;
+    position: relative;
+    width: 100px;
+    top: -380px;
+    left: 260px;
+}
+.bella-v{
+    border-left: 1px solid black;
+    position:relative;
+    height: 60px;
+    top: -380px;
+    left: 260px;
+}
+.abby{
+    position: relative;
+    top: -220px;
+    left: 350px
+}
+.abby-h{
+    border-bottom: 1px solid black;
+    position: relative;
+    width: 150px;
+    top: -330px;
+    left: 271px;
+}
+.abby-v{
+    border-left: 1px solid black;
+    position:relative;
+    height: 60px;
+    top: -330px;
+    left: 420px;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: inline-block;
+  }
+.kat-dot{
+    position: relative;
+    top: -398px;
+    left: 58px;
+}
+.bella-dot{
+    position: relative;
+    top: -392px;
+    left: 253px;
+}
+.abby-dot{
+    position: relative;
+    top: -398px;
+    left: 260px;
+}
+.duke{
+    width: 5%;
+    margin-left: 32%;
+    margin-right: 3%;
+}
+.sullfdn{
+    width: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.olsenk{
+    width: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.tulane{
+    width: 5%;
+    margin-left: 3%;
+    margin-right: 5%;
+}
+.group{
+    margin-left: 25%;
+    width: 50%;
+    margin-top: 7%;
+}
+#partnerTitle{
+    margin-top: 2%;
+}

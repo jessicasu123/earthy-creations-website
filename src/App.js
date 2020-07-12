@@ -11,6 +11,7 @@ import Cart from './pages/Cart/Cart';
 import Exhibits from './pages/Exhibits';
 import ArtworkDetails from './pages/ArtworkDetails/ArtworkDetails';
 import Footer from './components/Footer/Footer';
+import Team from './pages/Team/Team';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <NavBar></NavBar>
       <Switch>
         <Route path="/about" component={About}></Route>
+        <Route path="/team" component={Team}></Route>
         <Route path="/artists" component={Artists}></Route>
         <Route path="/shop" component={Artworks}></Route>
         <Route path="/details" component={ArtworkDetails}></Route>
