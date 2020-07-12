@@ -1,0 +1,41 @@
+.cart-page {
+    margin-top: 10px; 
+    margin-right: 30px; 
+    margin-left: 30px; 
+}
+
+.checkout-button {
+    margin-top: 20px; 
+    margin-left: auto; 
+    width: 215px; 
+    background-color: white; 
+    border: 0.5px solid black; 
+    padding: 15px; 
+    font-family: "Avenir", sans-serif;
+    cursor: pointer;
+}
+
+.checkout-button:hover {
+    background-color: black; 
+    color: white; 
+}
+
+.checkout-summary {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.checkout-summary-label {
+    margin-top: 20px; 
+    font-size: 24px; 
+    padding-bottom: 10px; 
+    font-weight: bold; 
+    border-bottom: 1px solid gray; 
+    margin-left: auto; 
+}
+
+.checkout-total-label {
+    font-size: 18px; 
+    margin-top: 10px; 
+    margin-left: auto; 
+}
