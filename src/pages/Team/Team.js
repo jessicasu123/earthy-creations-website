@@ -16,34 +16,41 @@ import group from '../../images/team/group.png';
 export default class Team extends Component {
     render() {
         return (
-            <div>
+            <div class="teamPage">
                 <div className="title">
                     <Title text="MEET OUR TEAM" color="orange" />
                 </div>
                 <div className="row">
                     <div className="person" id="kat-box">
                         <img src= {kat} alt="kat" className="team_img"/>
-                        <span class="name kat">Kat Beben</span>
-                        <span class="role kat">Co-founder</span>
-                        <div class="kat-h line"></div>
+                        <span class="name kat katDes kat-name">Kat Beben</span>
+                        <span class="role kat katDes kat-role">Co-founder</span>
+                        
+                        <div class="kat-h line">
+                            <span class="dot kat-dot"></span>
+                        </div>
                         <div class="kat-v line"></div>
-                        <span class="dot kat-dot"></span>
+                        
                     </div>
                     <div className="person" id="bella-box">
                         <img src= {bella} alt="bella" className="team_img"/>
-                        <span class="name bella">Bella Almeida</span>
-                        <span class="role bella">Founder</span>
-                        <div class="bella-h line"></div>
+                        <span class="name bella bellaDes bella-name">Bella Almeida</span>
+                        <span class="role bella bellaDes bella-role">Founder</span>
+                        <div class="bella-h line">
+                            <span class="dot bella-dot"></span>
+                        </div>
                         <div class="bella-v line"></div>
-                        <span class="dot bella-dot"></span>
+                        
                     </div>
                     <div className="person" id="abby-box">
                         <img src= {abby} alt="abby" className="team_img"/>
-                        <span class="name abby">Abby Shlesinger</span>
-                        <span class="role abby">Co-founder</span>
-                        <div class="abby-h line"></div>
+                        <span class="name abby abbyDes abby-name">Abby Shlesinger</span>
+                        <span class="role abby abbyDes abby-role">Co-founder</span>
+                        <div class="abby-h line">
+                            <span class="dot abby-dot"></span>
+                        </div>
                         <div class="abby-v line"></div>
-                        <span class="dot abby-dot"></span>
+                        
                     </div>
                     
                 </div>
@@ -76,20 +83,22 @@ export default class Team extends Component {
                 
                </div>*/}
                 
+               <div className="bottom-half-team">
+                    <div className="title" id="partnerTitle">
+                        <Title text="OUR PARTNERS" color="green" />
+                    </div>
+                    <div>
+                        <img src= {duke} alt="duke" className="duke"/>
+                        <img src= {sullfdn} alt="sullivan foundation" className="sullfdn"/>
+                        <img src= {tulane} alt="tulane" className="tulane"/>
+                        <img src= {olsen} alt="olsenk" className="olsenk"/>
+                    </div>
 
-                <div className="title" id="partnerTitle">
-                    <Title text="OUR PARTNERS" color="green" />
-                </div>
-                <div>
-                    <img src= {duke} alt="duke" className="duke"/>
-                    <img src= {sullfdn} alt="sullivan foundation" className="sullfdn"/>
-                    <img src= {tulane} alt="tulane" className="tulane"/>
-                    <img src= {olsen} alt="olsenk" className="olsenk"/>
-                </div>
-
-                <div>
-                    <img src= {group} alt="group" className="group"/>
-                </div>
+                    <div>
+                        <img src= {group} alt="group" className="group"/>
+                    </div>
+               </div>
+                
             </div>
         )
     }

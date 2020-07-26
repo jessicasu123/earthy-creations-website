@@ -36,7 +36,7 @@
 }
 #orangeBox{
     position: relative;
-    top: -25px;
+    top: -5px;
     z-index:1;
 }
 #yellowBox{
@@ -48,7 +48,7 @@
 
 #bella-box{
     position: relative;
-    top: 0px;
+    top: -20px;
     z-index: 5;
 }
 #kat-box{
@@ -63,78 +63,182 @@
     left: -100px;
     z-index: 3;
 }
-
-.team_img{
-    width: 100%;
-    
-    display: block;
-}
 .name {
     display: block;
     padding-top: 10px;
     font-size: 20px;
     /*font-weight: bold;*/
+    position: absolute;
+    top: 0px;
+    white-space: nowrap;
 }
 .role {
     display: block;
+    position: absolute;
+    top: 30px;
+    white-space: nowrap;
 }
-
+.team_img{
+    width: 100%;
+    
+    display: block;
+}
 .kat{
-    position: relative;
+    position: absolute;
     top: -220px;
     left: -110px;
 }
 .kat-h{
     border-bottom: 1px solid black;
-    position: relative;
-    width: 120px;
+    position: absolute;
+    /*width: 120px;
     top: -330px;
-    left: -60px;
+    left: -60px;*/
+    /*top: -41.5vh;
+    left: -26%;*/
+    top: 107px;
+    left: -7vw;
+    width: 43%;
 }
 .kat-v{
     border-left: 1px solid black;
-    position:relative;
-    height: 60px;
+    position:absolute;
+    /*height: 60px;
     top: -330px;
-    left: -60px;
+    left: -60px;*/
+    /*top: -41.5vh;*/
+    /*left: 124.8%;*/
+    top: 107px;
+    left: -7vw;
+    height: 8vh;
+    
+}
+.kat-dot{
+    position: absolute;
+    /*top: -398px;
+    left: 58px;*/
+    top: -7px;
+    /*left: 142px; */
+    left: 11vw;
+}
+.katDes{
+    position: absolute;
+    /*top: -20.5vh;*/
+    top: 183px;
+    left: -41.8%;
+}
+.kat-name{
+    position: absolute;
+    top: 170px;
+}
+.kat-role{
+    position: absolute;
+    top:203px;
 }
 .bella{
-    position: relative;
+    position: absolute;
     top: -350px;
     left: 370px;
 }
 .bella-h{
     border-bottom: 1px solid black;
-    position: relative;
-    width: 100px;
+    /*position: relative;*/
+    /*width: 100px;
     top: -380px;
-    left: 260px;
+    left: 260px;*/
+    /*top: -53.5vh;*/
+    /*top: -420px;
+    left: 18vw;
+    width: 43%;*/
+    position: absolute;
+    top: 27px;
+    left: 18vw;
+    width: 43%;
 }
 .bella-v{
     border-left: 1px solid black;
-    position:relative;
-    height: 60px;
+    /*position:relative;*/
+    /*height: 60px;
     top: -380px;
-    left: 260px;
+    left: 260px;*/
+    /*top:  -53.6vh;*/
+    position: absolute;
+    top: 27px;
+    left: 29.4vw;
+    height: 3vh;
+}
+.bella-dot{
+    /*position: relative;
+    top: 13px;
+    left: -1vw; */
+    position: absolute;
+    top: -6px;
+}
+.bellaDes{
+    position: absolute;
+    /*top: -41.5vh;*/
+    /*top: -325px;*/
+    left: 97%;
+    top: 60px;
+}
+.bella-name{
+    position: absolute;
+    top: 50px;
+}
+.bella-role{
+    position: absolute;
+    top: 83px;
 }
 .abby{
-    position: relative;
+    position: absolute;
     top: -220px;
     left: 350px
 }
 .abby-h{
     border-bottom: 1px solid black;
-    position: relative;
-    width: 150px;
+    position: absolute;
+    /*width: 150px;
     top: -330px;
-    left: 271px;
+    left: 271px;*/
+    /*top: -41.5vh;*/
+    top: 107px;
+    left: 20vw;
+    width: 43%;
 }
 .abby-v{
     border-left: 1px solid black;
-    position:relative;
-    height: 60px;
+    position:absolute;
+    /*height: 60px;
     top: -330px;
-    left: 420px;
+    left: 420px;*/
+    /*top: -41.5vh;*/
+    top: 107px;
+    left: 117.8%;
+    height: 8vh;
+}
+.abby-dot{
+    position: absolute;
+    /*top: -398px;
+    left: 260px;*/
+    /*top: -50vh;
+    left: 80%;*/
+    top: -7px;
+    left: -1vh;
+}
+.abbyDes{
+    position: absolute;
+    /*top: -20.5vh;*/
+    top: 183px;
+    /*top: 35%;*/
+    left: 98.8%;
+}
+.abby-name{
+    position: absolute;
+    top: 170px;
+}
+.abby-role{
+    position: absolute;
+    top: 203px;
 }
 .dot {
     height: 15px;
@@ -143,21 +247,6 @@
     border-radius: 50%;
     display: inline-block;
   }
-.kat-dot{
-    position: relative;
-    top: -398px;
-    left: 58px;
-}
-.bella-dot{
-    position: relative;
-    top: -392px;
-    left: 253px;
-}
-.abby-dot{
-    position: relative;
-    top: -398px;
-    left: 260px;
-}
 .duke{
     width: 5%;
     margin-left: 32%;
@@ -186,3 +275,226 @@
 #partnerTitle{
     margin-top: 2%;
 }
+
+.teamPage{
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+@media only screen and (max-width: 1300px) {
+    
+    #pinkBox{
+        position: relative;
+        top: -75px;
+        left: 60px;
+        z-index: 0;
+    }
+    #orangeBox{
+        position: relative;
+        top: 60px;
+        z-index:1;
+        padding-bottom: 90px;
+    }
+    #yellowBox{
+        position: relative;
+        top: -75px;
+        left: -100px;
+        z-index: 2;
+    }
+    #bella-box{
+        position: relative;
+        top: -20px;
+        z-index: 5;
+    }
+    #kat-box{
+        position: relative;
+        top: 100px;
+        left: 80px;
+        z-index: 4;
+    }
+    #abby-box{
+        position: relative;
+        top: 100px;
+        left: -80px;
+        z-index: 3;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    
+    #pinkBox{
+        position: relative;
+        top: -25px;
+        left: 50px;
+        z-index: 0;
+    }
+    #orangeBox{
+        position: relative;
+        top: 90px;
+        z-index:1;
+        padding-bottom: 120px;
+    }
+    #yellowBox{
+        position: relative;
+        top: -25px;
+        left: -90px;
+        z-index: 2;
+    }
+    #bella-box{
+        position: relative;
+        top: -20px;
+        z-index: 5;
+    }
+    #kat-box{
+        position: relative;
+        top: 100px;
+        left: 70px;
+        z-index: 4;
+    }
+    #abby-box{
+        position: relative;
+        top: 100px;
+        left: -70px;
+        z-index: 3;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    
+    #pinkBox{
+        display: none;
+    }
+    #orangeBox{
+        display: none;
+    }
+    #yellowBox{
+        display: none;
+    }
+    .dot{
+        display: none;
+    }
+    .line{
+        display: none;
+    }
+
+    #bella-box{
+        position: relative;
+        top: 0px;
+        z-index: 5;
+    }
+    #kat-box{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        z-index: 4;
+    }
+    #abby-box{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        z-index: 3;
+    }
+    .name {
+        display: block;
+        padding-top: 10px;
+        font-size: 20px;
+        /*font-weight: bold;*/
+        position: static;
+        white-space: nowrap;
+    }
+    .role {
+        display: block;
+        position: static;
+        white-space: nowrap;
+    }
+  }
+
+  @media only screen and (max-width: 660px) {
+    
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 10%;
+        padding-right: 10%;
+        
+    }
+    .person {
+        vertical-align: top;
+        display: inline-block;
+        text-align: left;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 5%;
+        flex: 100%;
+    }
+    #pinkBox{
+        display: none;
+    }
+    #orangeBox{
+        display: none;
+    }
+    #yellowBox{
+        display: none;
+    }
+    .dot{
+        display: none;
+    }
+    .line{
+        display: none;
+    }
+
+    #bella-box{
+        position: relative;
+        top: 0px;
+        z-index: 5;
+    }
+    #kat-box{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        z-index: 4;
+    }
+    #abby-box{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        z-index: 3;
+    }
+    .name {
+        display: block;
+        padding-top: 10px;
+        font-size: 20px;
+        /*font-weight: bold;*/
+        position: static;
+        white-space: nowrap;
+    }
+    .role {
+        display: block;
+        position: static;
+        white-space: nowrap;
+    }
+    .group{
+        margin-left: 15%;
+        width: 70%;
+        margin-top: 15%;
+    }
+    .duke{
+        width: 10%;
+        margin-left: 22%;
+        margin-right: 3%;
+    }
+    .sullfdn{
+        width: 10%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    .olsenk{
+        width: 10%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    .tulane{
+        width: 10%;
+        margin-left: 3%;
+        margin-right: 5%;
+    }
+  }
