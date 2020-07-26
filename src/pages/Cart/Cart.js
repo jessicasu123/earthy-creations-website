@@ -50,15 +50,15 @@ export default class Cart extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <div className="title">
-                    <Title text="CART" color="blue" />
-                </div>
-                <div className="cart-page">
-                    {this.showCartItems()}
-                    {this.state.cartItems.length > 0 && this.checkoutSummary()}
-                </div>
-            </React.Fragment>
-        )
+          <React.Fragment>
+            <div className="title">
+              <Title text="CART" color="blue" />
+            </div>
+            <div className="cart-page">
+              {this.state.cartItems.length > 0 && this.showCartItems()}
+              {this.state.cartItems.length > 0 && this.checkoutSummary()}
+            </div>
+          </React.Fragment>
+        );
     }
 }
