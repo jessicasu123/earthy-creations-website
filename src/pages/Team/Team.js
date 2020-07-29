@@ -20,8 +20,8 @@ export default class Team extends Component {
                 <div className="title">
                     <Title text="MEET OUR TEAM" color="orange" />
                 </div>
-                <div className="row">
-                    <div className="person" id="kat-box">
+                <div className="team-row">
+                    <div className="team-person" id="kat-box">
                         <img src= {kat} alt="kat" className="team_img"/>
                         <span class="name kat katDes kat-name">Kat Beben</span>
                         <span class="role kat katDes kat-role">Co-founder</span>
@@ -32,7 +32,7 @@ export default class Team extends Component {
                         <div class="kat-v line"></div>
                         
                     </div>
-                    <div className="person" id="bella-box">
+                    <div className="team-person" id="bella-box">
                         <img src= {bella} alt="bella" className="team_img"/>
                         <span class="name bella bellaDes bella-name">Bella Almeida</span>
                         <span class="role bella bellaDes bella-role">Founder</span>
@@ -42,7 +42,7 @@ export default class Team extends Component {
                         <div class="bella-v line"></div>
                         
                     </div>
-                    <div className="person" id="abby-box">
+                    <div className="team-person" id="abby-box">
                         <img src= {abby} alt="abby" className="team_img"/>
                         <span class="name abby abbyDes abby-name">Abby Shlesinger</span>
                         <span class="role abby abbyDes abby-role">Co-founder</span>
@@ -54,14 +54,14 @@ export default class Team extends Component {
                     </div>
                     
                 </div>
-                <div className="row">
-                    <div className="person" id="pinkBox">
+                <div className="team-row">
+                    <div className="team-person" id="pinkBox">
                         <img src= {pinkbox} alt="pinkbox" className="team_img"/>
                     </div>
-                    <div className="person" id="orangeBox">
+                    <div className="team-person" id="orangeBox">
                         <img src= {orangebox} alt="orangeBox" className="team_img"/>
                     </div>
-                    <div className="person" id="yellowBox">
+                    <div className="team-person" id="yellowBox">
                         <img src= {yellowbox} alt="yellowBox" className="team_img"/>
                     </div>
                 </div>
