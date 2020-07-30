@@ -5,7 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 import Artworks from './pages/Artworks/Artworks';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import Artists from './pages/Artists';
+import Artists from './pages/Artists/Artists';
 import Blog from './pages/Blog';
 import Cart from './pages/Cart/Cart';
 import Exhibits from './pages/Exhibits';
