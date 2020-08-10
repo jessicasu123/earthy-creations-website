@@ -5,8 +5,8 @@ var client = contentful.createClient({
     accessToken: "zpvytqz4qKh306Me6gyA3XEitF8nklsBPREm4MjmC1s",
 });
 
-export async function getArtworks() {
-    let artworksFetch; 
+async function getArtworks() {
+    let artworksFetch;
     await client.getEntries({
         content_type: "artwork",
     }).then((response) => {
@@ -17,6 +17,24 @@ export async function getArtworks() {
             const image = item.fields.image.fields.file.url;
             return { title, artistName, price, id, image, category, priceRange };
         });
-    }); 
-    return artworksFetch; 
+    });
+    return artworksFetch;
 }
+
+async function getExhibits(){
+    let exhibitsFetch;
+    await client.getEntries({
+        content_type: "exhibits"
+    }).then((response) => {
+        exhibitsFetch = response.items;
+        exhibitsFetch = exhibitsFetch.map((item) => {
+            const {name, artworks, date, id} = item.fields;
+            // const {id} = item.sys;
+            const image = item.fields.image.fields.file.url;
+            return {name, artworks, date, id, image};
+        });
+    });
+    return exhibitsFetch;
+}
+
+export {getArtworks, getExhibits}

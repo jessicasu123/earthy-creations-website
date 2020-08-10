@@ -1,0 +1,40 @@
+.whiteButton {
+    position: absolute;
+    box-shadow: 1px 2px 10px black;
+}
+
+.whiteButton button {
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    letter-spacing: 0px;
+    color: white;
+    border: 1px white solid;
+    text-shadow: 1px 2px 10px black;
+}
+
+.whiteButton button:hover {
+    cursor: pointer;
+}
+
+.whiteButton button:focus {
+    outline: none;
+}
+
+#shopButton {
+    bottom: 40px;
+    left: 40px;
+}
+
+#exhibitButton {
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+}
+
+#shopButton button, #exhibitButton button {
+    min-height: 40px;
+    min-width: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

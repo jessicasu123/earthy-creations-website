@@ -16,7 +16,7 @@ export default class SliderContent extends Component {
         return (
             <div style={styling} className="sliderContent">
                 {this.props.slides.map((slide, i) => (
-                    <Slide key={slide + i} content={slide} width={this.getWidth()} />
+                    <Slide key={slide + i} content={slide} width={this.getWidth()} type={this.props.type} text={this.props.text[i]} />
                 ))}
             </div>
         )

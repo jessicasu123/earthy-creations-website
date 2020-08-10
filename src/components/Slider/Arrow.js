@@ -7,11 +7,9 @@ export default class Arrow extends Component {
     render() {
         const divStyling = this.props.direction === 'right' ? {right: "10px"} : {left: "10px"};
 
-        const imgStyling = {transform: 'translateX(' + this.props.direction === 'left' ? '-2' : '2' + 'px)'};
-
         return (
             <div onClick={this.props.handleClick} className="arrow" style={divStyling}>
-                {this.props.direction === 'right' ? <img src={rightArrow} className="rightArrow" style={imgStyling} alt="right arrow" /> : <img src={leftArrow} className="leftArrow" style={imgStyling} alt="left arrow" />}
+                {this.props.direction === 'right' ? <img src={rightArrow} className="rightArrow" alt="right arrow" /> : <img src={leftArrow} className="leftArrow" alt="left arrow" />}
             </div>
         );
     }

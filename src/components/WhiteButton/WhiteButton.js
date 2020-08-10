@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import "./ShopButton.css";
+import "./WhiteButton.css";
 import {Redirect} from 'react-router-dom';
 
-export default class ShopButton extends Component {
+export default class WhiteButton extends Component {
     constructor(props){
         super(props);
 
@@ -23,11 +23,11 @@ export default class ShopButton extends Component {
 
     render() {
         return (
-            <div className="shopButton">
+            <div className="whiteButton" id={this.props.buttonid}>
                 {this.state.clicked ?
-                    <Redirect to="/shop" />
+                    <Redirect to={this.props.path} />
                     :
-                    <button onClick={this.handleClick}>Shop Now</button>
+                    <button onClick={this.handleClick}>{this.props.text}</button>
                 }
             </div>
         );

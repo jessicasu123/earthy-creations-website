@@ -1,12 +1,15 @@
 .slide {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    position: relative;
+    top: 0px;
 }
 
-.slide1 {
-    background-position: left;
+.slide img {
+    max-height: 510px;
+    max-width: 60vw;
+    position: relative;
+    cursor: pointer;
 }
