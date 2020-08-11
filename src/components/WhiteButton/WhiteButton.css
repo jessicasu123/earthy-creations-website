@@ -1,6 +1,9 @@
 .whiteButton {
-    position: absolute;
-    box-shadow: 1px 2px 10px black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 100px;
 }
 
 .whiteButton button {
@@ -10,7 +13,6 @@
     letter-spacing: 0px;
     color: white;
     border: 1px white solid;
-    text-shadow: 1px 2px 10px black;
 }
 
 .whiteButton button:hover {
@@ -22,14 +24,14 @@
 }
 
 #shopButton {
-    bottom: 40px;
-    left: 40px;
+    /* bottom: 40px;
+    left: 40px; */
 }
 
 #exhibitButton {
-    bottom: 40px;
+    /* bottom: 40px;
     left: 40px;
-    right: 40px;
+    right: 40px; */
 }
 
 #shopButton button, #exhibitButton button {

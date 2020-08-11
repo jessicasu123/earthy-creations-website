@@ -25,7 +25,7 @@ export default class Home extends Component {
         ]
         return (
             <div className="home">
-                <Slider slides={images} text="Shop Now" path="/shop" buttonid="shopButton" type="shop" />
+                <Slider slides={images} text="Shop Now" path="/shop" buttonid="shopButton" type="shop" link={true} />
                 <div className="title">
                     <Title text="JOIN THE MOVEMENT" color="green" />
                 </div>

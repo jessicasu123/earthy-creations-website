@@ -75,10 +75,9 @@ export default class Slider extends Component {
     }
 
     render() {
-        // <WhiteButton text={this.props.text} path={this.props.path} buttonid={this.props.buttonid} />
         return (
             <div className="slider">
-                <SliderContent translate={this.state.translate} transition={this.state.transition} width={this.getWidth() * this.props.slides.length} slides={this.props.slides} type={this.props.type} text={this.props.text} />
+                <SliderContent translate={this.state.translate} transition={this.state.transition} width={this.getWidth() * this.props.slides.length} slides={this.props.slides} type={this.props.type} text={this.props.text} link={this.props.link} />
                 {this.props.slides.length > 1 &&
                     <React.Fragment>
                         <Arrow direction="left"
@@ -94,6 +93,7 @@ export default class Slider extends Component {
                             }}
                         />
                         <Dots slides={this.props.slides} currIndex={this.state.currIndex} handleClick={this.changeSlide} />
+                        {this.props.link && false && <WhiteButton text={this.props.text} path={this.props.path} buttonid={this.props.buttonid} />}
                     </React.Fragment>
                 }
             </div>

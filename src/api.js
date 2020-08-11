@@ -31,7 +31,12 @@ async function getExhibits(){
             const {name, artworks, date, id} = item.fields;
             // const {id} = item.sys;
             const image = item.fields.image.fields.file.url;
-            return {name, artworks, date, id, image};
+            const slideImages = [];
+            console.log(item.fields.slideImages);
+            item.fields.slideImages.forEach((image, i) => {
+                slideImages.push(image.fields.file.url);
+            });
+            return {name, artworks, date, id, image, slideImages};
         });
     });
     return exhibitsFetch;

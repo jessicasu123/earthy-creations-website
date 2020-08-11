@@ -50,7 +50,11 @@ export default class Slide extends Component {
                     <Redirect to={this.state.link} />
                     :
                     <div className={className}>
-                        <img src={this.props.content} alt="slide" onClick={this.handleClick} />
+                        {this.props.link ?
+                            <img style={{cursor: 'pointer'}} src={this.props.content} alt="slide" onClick={this.handleClick} />
+                            :
+                            <img src={this.props.content} alt="slide" />
+                        }
                     </div>
                 }
             </React.Fragment>

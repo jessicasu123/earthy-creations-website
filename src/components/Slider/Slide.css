@@ -11,5 +11,5 @@
     max-height: 510px;
     max-width: 60vw;
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
 }

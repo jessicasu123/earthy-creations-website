@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Exhibits.css';
 import Title from '../../components/Title/Title';
-import Exhibit from '../../components/Exhibit/Exhibit';
 import Slider from '../../components/Slider/Slider';
 import {getExhibits} from '../../api.js';
 
@@ -46,7 +45,7 @@ export default class Exhibits extends Component {
                 <div className="title">
                     <Title text="EXHIBITIONS" color="yellow" />
                 </div>
-                <Slider slides={this.state.images} text={this.state.ids} buttonid="exhibitButton" type="exhibit" />
+                <Slider slides={this.state.images} text={this.state.ids} buttonid="exhibitButton" type="exhibit" link={true} />
             </div>
         )
     }
