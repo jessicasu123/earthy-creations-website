@@ -57,7 +57,6 @@ export default class ArtworkDetails extends Component {
                             <p className="detail-artworkTitle">{artwork.title}</p>
                             <p className="detail-artistName">{artwork.artistName}</p>
                             <p className="detail-size">Size</p>
-                            <hr className="detail-line"></hr>
                             <p className="detail-price">$ {artwork.price}</p>
                             <button className="button-addToCart" onClick={(e) => { this.addToCart()}}>Add to Cart</button>
                     </div>

@@ -9,7 +9,7 @@ export default class Cart extends Component {
     constructor(props) {
         super(props); 
         this.state = {
-            cartItems: JSON.parse(localStorage.getItem(constants.local_storage_cart_key)), 
+            cartItems: localStorage.getItem(constants.local_storage_cart_key) ? JSON.parse(localStorage.getItem(constants.local_storage_cart_key)) : [], 
         }
         this.updateCartItems = this.updateCartItems.bind(this); 
     }
