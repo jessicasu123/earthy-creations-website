@@ -6,7 +6,6 @@ export default class Modal extends Component {
     constructor(props) {
         super(props); 
         this.state = {
-            modalText: this.props.modalText, 
             buttonText: this.props.buttonText,
         }
     }
@@ -21,7 +20,7 @@ export default class Modal extends Component {
         return (
             <div className="modal-container">
                 <div className="modal-close" onClick={this.closeModal}></div>
-                <div className="modal-text"> {this.state.modalText}</div>
+                <div className="modal-text"> {this.props.modalText}</div>
                 <div className="modal-cart-item">
                     <img className="modal-item-image" src={artwork.image} alt={artwork.title}/>
                     <div className="modal-item-info">

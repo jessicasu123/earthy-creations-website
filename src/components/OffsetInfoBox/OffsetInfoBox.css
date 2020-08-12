@@ -6,6 +6,8 @@
     background-color: #E5E5E5;
     width: 461px;
     height: 177px;
+    position: absolute;
+    z-index: -1;
 }
 
 .background-box-right {
@@ -13,21 +15,19 @@
     width: 461px;
     height: 177px;
     position: absolute;
+    z-index: -1;
     right: 0px;
 }
 
 .background-box-info-left {
-    position: absolute;
-    left: 30px;
-    top: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
 }
 
 .background-box-info-right {
-    position: absolute;
-    right: 30px;
-    top: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
     text-align: right;
-
 }
 
 .background-box-title {
@@ -51,4 +51,31 @@
 .background-box-container-right-offset {
     position: absolute;
     right: 0px;
+}
+
+@media screen and (max-width: 1000px) {
+    .background-box-title {
+        font-size: 25px;
+    }
+
+    .background-box-description {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .background-box-right, .background-box-left {
+        width: 314px;
+        height: 148px;
+    }
+
+    .offset-info-box {
+        display: flex;
+        justify-content: center;
+    }
+
+    .background-box-info-left, .background-box-info-right {
+        padding: 30px 10px;
+        text-align: center;
+    } 
 }

@@ -1,6 +1,7 @@
 
 .detail-container {
     margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -15,7 +16,7 @@
 }
 
 .right-detail {
-    padding-left: 30px;
+    margin-left: 30px;
     margin-top: 30px;
     margin-right: 10%;
     width: 40%;
@@ -25,10 +26,6 @@
     display: block;
     width: 600px;
     height: 600px;
-}
-
-.detail-description {
-    padding-left: 20px; 
 }
 
 .detail-artworkTitle { 
@@ -101,13 +98,21 @@
     align-items: center;
     margin-top: 100px;
     position: relative;
-    height: 400px;
+}
+
+.detail-recycled-materials-image {
+    width: 80%;
+}
+
+.recycled-materials-info {
+    position: absolute;
+    margin-top: 170px;
+    text-align: center;
 }
 
 .recycled-materials-title {
     color: #5F8E85;
     font-size: 32px;
-    margin-top: 170px;
     font-weight: 600;
     margin-bottom: 15px;
 }
@@ -197,7 +202,16 @@
     margin-top: 150px;
     margin-right: 10%;
     margin-left: 10%;
-    margin-bottom: 150px;
+}
+
+@media screen and (max-width: 1200px) {
+    .recycled-materials-info {
+        margin-top: 120px;
+    }
+
+    .recycled-materials-title {
+        font-size: 25px;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -206,22 +220,84 @@
         padding: 20px;
     }
 
+    .detail-img {
+        width: 100%;
+        height: 100%;
+    }
+
     .left-detail {
         margin-left:auto;
         margin-right:auto;
     }
 
     .right-detail {
-        width: 500px;
-        padding-top: 20px;
+        width: 100%;
         margin-right: auto;
         margin-left:auto;
     }
 
-    .detail-line {
-        width: 100%;
+    .detail-size {
+        margin-bottom: 50px;
     }
+
     .button-addToCart {
         width: 100%;
     }
+
+    .other-materials {
+        margin-right: 0;
+    }
+
+    .recycled-materials-info {
+        margin-top: 80px;
+    }
+
+     .recycled-materials-title {
+         font-size: 18px;
+     }
+
+     .recycled-materials-subtitle {
+         font-size: 14px;
+     }
+}
+
+@media screen and (max-width: 550px) {
+
+    .detail-artworkTitle {
+        font-size: 35px;
+    }
+
+    .detail-artistName {
+        font-size: 25px;
+    }
+
+    .detail-size {
+        font-size: 20px;
+    }
+
+    .detail-price {
+        font-size: 25px; 
+    }
+
+    .detail-container {
+        margin-top: 0;
+    }
+    .info-box-piece {
+        margin-top: 50px;
+    }
+
+    .detail-recycled-materials {
+        margin-top: 30px;
+    }
+    .recycled-materials-info {
+        margin-top: 40px;
+    }
+
+     .recycled-materials-title {
+         font-size: 14px;
+     }
+
+     .recycled-materials-subtitle {
+         font-size: 12px;
+     }
 }
