@@ -1,0 +1,31 @@
+.other-materials-container {
+    position: relative;
+}
+
+.materials-background-box {
+    background-color: #E5E5E5;
+    width: 314px;
+    height: 148px;
+    position: absolute;
+    right: 0;
+}
+
+.other-materials-title-text {
+    font-size: 28px;
+    font-weight: 600;
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    color: #534F4F;
+    width: 100%;
+}
+
+.other-materials-text {
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    text-align: center;
+    top: 70px;
+    color: #848383;
+    width: 100%;
+}
