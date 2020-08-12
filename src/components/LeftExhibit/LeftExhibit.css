@@ -8,6 +8,10 @@
     flex-wrap: wrap;
 }
 
+.leftExhibit a {
+    text-decoration: none;
+}
+
 .leftExhibitRightColumn img {
     width: 25vw;
     min-width: 200px;
@@ -25,7 +29,8 @@
 
 .leftExhibitArtTitle {
     font-size: 36px;
-    margin-bottom: 5px
+    margin-bottom: 5px;
+    color: black;
 }
 
 .leftExhibitArtistName {

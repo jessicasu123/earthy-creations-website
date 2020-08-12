@@ -9,8 +9,10 @@ export default class Spotlight extends Component {
         }
         return (
             <div className="spotlight">
-                <div className="spotlightBox"></div>
-                <div style={artistStyle} className="spotlightArtist"></div>
+                <div className="spotlightWrapper">
+                    <div className="spotlightBox"></div>
+                    <div style={artistStyle} className="spotlightArtist"></div>
+                </div>
                 <div className="spotlightName">
                     <p className="artistSpotlight">ARTIST SPOTLIGHT</p>
                     <p className="artistSpotlightName">Kira Upin</p>

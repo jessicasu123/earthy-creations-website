@@ -51,7 +51,15 @@ export default class Slide extends Component {
                     :
                     <div className={className}>
                         {this.props.link ?
-                            <img style={{cursor: 'pointer'}} src={this.props.content} alt="slide" onClick={this.handleClick} />
+                            <React.Fragment>
+                                <img style={{cursor: 'pointer'}} src={this.props.content} alt="slide" onClick={this.handleClick} />
+                                {this.props.type === "exhibit" &&
+                                    <div className="exhibitNameAndDate" onClick={this.handleClick} >
+                                        <p>{this.props.name}</p>
+                                        <p className="exhibitDate">{this.props.date}</p>
+                                    </div>
+                                }
+                            </React.Fragment>
                             :
                             <img src={this.props.content} alt="slide" />
                         }

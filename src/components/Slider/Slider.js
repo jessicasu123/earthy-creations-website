@@ -76,8 +76,8 @@ export default class Slider extends Component {
 
     render() {
         return (
-            <div className="slider">
-                <SliderContent translate={this.state.translate} transition={this.state.transition} width={this.getWidth() * this.props.slides.length} slides={this.props.slides} type={this.props.type} text={this.props.text} link={this.props.link} />
+            <div className="slider fade-in">
+                <SliderContent translate={this.state.translate} transition={this.state.transition} width={this.getWidth() * this.props.slides.length} slides={this.props.slides} type={this.props.type} text={this.props.text} link={this.props.link} names={this.props.names} dates={this.props.dates} />
                 {this.props.slides.length > 1 &&
                     <React.Fragment>
                         <Arrow direction="left"

@@ -29,3 +29,9 @@
 .rightArrow:focus {
     outline: 0;
 }
+
+@media (max-width: 500px) {
+    .arrow {
+        display: none;
+    }
+}

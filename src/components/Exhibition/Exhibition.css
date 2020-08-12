@@ -50,3 +50,42 @@
     font-size: 18px;
     cursor: pointer;
 }
+
+@media (max-width: 600px) {
+    .exhibitions {
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+
+    .exhibition {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        position: static;
+        height: auto;
+    }
+
+    .exhibitionName {
+        position: static;
+        width: 55vw;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .exhibitionImage {
+        position: static;
+        width: 40vw;
+        height: 40vw;
+        margin-bottom: 15px;
+    }
+
+    .exhibitionBox {
+        z-index: -1;
+        display: none;
+    }
+
+    .exhibitionWrapper {
+        display: inline-block;
+    }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './LeftExhibit.css';
 import CustomBox from '../CustomBox/CustomBox';
+import {Link} from 'react-router-dom';
 
 export default class LeftExhibit extends Component {
     constructor(props){
@@ -36,10 +37,24 @@ export default class LeftExhibit extends Component {
         return (
             <div className="leftExhibit">
                 <div className="leftExhibitRightColumn">
-                    <img src={this.props.artwork.image} alt="exhibit image" />
+                    <Link to={{
+                        pathname: '/details',
+                        state: {
+                            artwork: this.props.artwork
+                        }
+                    }}>
+                        <img src={this.props.artwork.image} alt="exhibit image" />
+                    </Link>
                 </div>
                 <div className="leftExhibitLeftColumn">
-                    <p className="leftExhibitArtTitle">{this.props.artwork.title}</p>
+                    <Link to={{
+                        pathname: '/details',
+                        state: {
+                            artwork: this.props.artwork
+                        }
+                    }}>
+                        <p className="leftExhibitArtTitle">{this.props.artwork.title}</p>
+                    </Link>
                     <p className="leftExhibitArtistName">{this.props.artwork.artistName}</p>
                     <div className="leftExhibitArtDesc" ref={ (divElement) => { this.divElement = divElement } }>
                         <CustomBox width={this.state.width * 0.15} height={this.state.height * 0.9} position="top-left" />

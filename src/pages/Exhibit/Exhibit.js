@@ -15,7 +15,8 @@ export default class Exhibits extends Component {
             artworks: [],
             date: '',
             id: '',
-            slideImages: []
+            slideImages: [],
+            shrink: false
         }
     }
 
@@ -32,7 +33,6 @@ export default class Exhibits extends Component {
                         name: item.name,
                         slideImages: item.slideImages
                     });
-                    console.log(item.slideImages);
                     artworks = item.artworks;
                 }
             });
@@ -47,8 +47,21 @@ export default class Exhibits extends Component {
                 this.setState({
                     artworks: tempArtworks
                 });
+            }).then(() => {
+                window.addEventListener("resize", this.resize.bind(this));
+                this.resize();
             });
         });
+    }
+
+    resize() {
+        this.setState({
+            shrink: window.innerWidth <= 928
+        });
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.resize.bind(this));
     }
 
     render() {
@@ -60,7 +73,7 @@ export default class Exhibits extends Component {
                 <Slider slides={this.state.slideImages} buttonid="individualExhibitButton" type="individualExhibit" link={false} />
                 <div>
                     {this.state.artworks.map((artwork, i) => (
-                        i % 2 === 0 ?
+                        !this.state.shrink && i % 2 === 0 ?
                             <RightExhibit key={i} artwork={artwork} />
                             :
                             <LeftExhibit key={i} artwork={artwork} />
