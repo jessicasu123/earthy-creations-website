@@ -6,6 +6,9 @@ import LoadMoreSign from '../../components/LoadMoreSign/LoadMoreSign';
 import EmptyText from '../../components/EmptyText/EmptyText';
 import SearchField from '../../components/SearchField/SearchField';
 import CategoriesUnderline from '../../images/categories_underline.png';
+import MaterialsUnderline from '../../images/materials_underline.png';
+import PriceUnderline from '../../images/price_underline.png';
+
 import { getArtworks } from '../../api.js';
 import {withRouter} from 'react-router-dom';
 import './Artworks.css';
@@ -120,13 +123,13 @@ class Artworks extends Component {
                 
                             <div className="checkBoxGroup-label">
                                 Materials
-                                <img className="checkbox-underline" src={CategoriesUnderline} />
+                                <img className="checkbox-underline" src={MaterialsUnderline} />
                             </div>
                             <CheckBoxGroup type="materials" items={this.state.materials} filters={this.state.selectedFilters} add={this.props.location.state ? this.props.location.state.category : ''}/>
                             
                             <div className="checkBoxGroup-label">
                                 Prices
-                                <img className="checkbox-underline" src={CategoriesUnderline} />
+                                <img className="checkbox-underline" src={PriceUnderline} />
                             </div>
                             <CheckBoxGroup type="price" items={this.state.prices} filters={this.state.selectedFilters} />
                         </div>
