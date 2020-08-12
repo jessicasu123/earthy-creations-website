@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Artwork from '../../components/Artwork';
 import CheckBoxGroup from '../../components/CheckBoxGroup/CheckBoxGroup';
-import './Artworks.css';
 import Title from '../../components/Title/Title';
-import LoadingSign from '../../components/LoadingSign/LoadingSign';
-import { getArtworks } from '../../api.js';
+import LoadMoreSign from '../../components/LoadMoreSign/LoadMoreSign';
+import EmptyText from '../../components/EmptyText/EmptyText';
 import SearchField from '../../components/SearchField/SearchField';
+import { getArtworks } from '../../api.js';
 import {withRouter} from 'react-router-dom';
+import './Artworks.css';
 
 class Artworks extends Component {
     state={
@@ -20,8 +21,14 @@ class Artworks extends Component {
     }
 
     componentDidMount() {
-        getArtworks().then((response) => {
-            this.setState({artworks: response, allArtworks: response});
+        this.loadArtworks();
+    }
+
+    loadArtworks () {
+        const numArtworks = this.state.artworks.length;
+        getArtworks(numArtworks).then((response) => {
+            const updatedArtworks = this.state.artworks.concat(response);
+            this.setState({ artworks: updatedArtworks, allArtworks: updatedArtworks });
         });
     }
 
@@ -81,6 +88,19 @@ class Artworks extends Component {
         this.state.artworks.map(this.createArtwork)
     )
 
+    showLoadMore = () => (
+        <React.Fragment>
+            <LoadMoreSign loadItemsAction={(e) => this.loadArtworks()} />
+            <div className="num-artwork-loading-text">
+                Showing {this.state.artworks.length} of total items...
+            </div>
+        </React.Fragment>
+    )
+
+    showNoArtworksText = () => (
+        < EmptyText emptyText = "Sorry, there are no matching pieces." />
+    )
+
     render() {
         return (
             <React.Fragment>
@@ -106,11 +126,10 @@ class Artworks extends Component {
                         <div className="products-center">
                             {this.showArtworks()}
                         </div>
-                        <LoadingSign />
-                        <div className="num-artwork-loading-text">
-                            Showing {this.state.artworks.length} of total items...
-                        </div>
+                        {this.state.artworks.length > 0 && this.showLoadMore()}
                     </div>
+
+                    {this.state.artworks.length == 0 && this.showNoArtworksText()}
                 </div>
             </React.Fragment>
         )

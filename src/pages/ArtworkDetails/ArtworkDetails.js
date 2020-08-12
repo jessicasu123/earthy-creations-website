@@ -26,11 +26,12 @@ export default class ArtworkDetails extends Component {
         } else {
             const currCartItems = localStorage.getItem('cart'); 
             const currCartItemsJSON = JSON.parse(currCartItems); 
-            if (! currCartItemsJSON.some(artwork => artwork.artwork.id === this.state.artwork.artwork.id)) {
-                currCartItemsJSON.push(this.state.artwork);
-            } else {
-                this.setState({modalText: ALREADY_IN_CART}); 
-            }
+            currCartItemsJSON.push(this.state.artwork);
+            // if (! currCartItemsJSON.some(artwork => artwork.artwork.id === this.state.artwork.artwork.id)) {
+            //     currCartItemsJSON.push(this.state.artwork);
+            // } else {
+            //     this.setState({modalText: ALREADY_IN_CART}); 
+            // }
             localStorage.setItem('cart', JSON.stringify(currCartItemsJSON)); 
         }
         this.showModal(); 

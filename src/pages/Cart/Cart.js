@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import CartItem from '../../components/CartItem/CartItem'; 
 import Title from '../../components/Title/Title';
+import EmptyText from '../../components/EmptyText/EmptyText';
 import constants from '../../constants.json'; 
 import { createCheckout } from '../../squareApi.js'; 
 import './Cart.css'; 
@@ -29,6 +30,10 @@ export default class Cart extends Component {
         this.state.cartItems.map(this.createCartItem)
     )
 
+    showCartEmptyText = () => (
+        <EmptyText emptyText = "Your cart is empty." />
+    )
+
     createCartItem = cartItem => (
         <CartItem key={cartItem.artwork.id} artwork={cartItem.artwork} updateCartItems={this.updateCartItems}/>
     )
@@ -43,22 +48,23 @@ export default class Cart extends Component {
 
     redirectToCheckout() {
         createCheckout(this.state.cartItems).then((checkoutURL) => {
-            console.log(checkoutURL); 
             //window.location.href = checkoutURL; 
         })
     }
 
     render() {
         return (
-          <React.Fragment>
-            <div className="title">
-              <Title text="CART" color="blue" />
-            </div>
-            <div className="cart-page">
-              {this.state.cartItems.length > 0 && this.showCartItems()}
-              {this.state.cartItems.length > 0 && this.checkoutSummary()}
-            </div>
-          </React.Fragment>
+            <React.Fragment>
+                <div className="title">
+                    <Title text="CART" color="blue" />
+                </div>
+                <div className="cart-page">
+                    {this.state.cartItems.length > 0 && this.showCartItems()}
+                    {this.state.cartItems.length > 0 && this.checkoutSummary()}
+                </div>
+
+                {this.state.cartItems.length == 0 && this.showCartEmptyText()}
+            </React.Fragment>
         );
     }
 }

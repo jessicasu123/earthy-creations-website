@@ -5,15 +5,17 @@ var client = contentful.createClient({
     accessToken: "zpvytqz4qKh306Me6gyA3XEitF8nklsBPREm4MjmC1s",
 });
 
-async function getArtworks() {
+async function getArtworks(numArtworks) {
     let artworksFetch;
     await client.getEntries({
         content_type: "artwork",
+        limit: 12,
+        skip: numArtworks,
     }).then((response) => {
         artworksFetch = response.items;
         artworksFetch = artworksFetch.map((item) => {
-            const { title, price, artistName, category, priceRange, materials, materialsDescription, size, status, exhibitDescription } = item.fields;
-            const { id } = item.sys;
+            const { id, title, price, artistName, category, priceRange, materials, materialsDescription, size, status, exhibitDescription } = item.fields;
+            // const { id } = item.sys;
             const image = item.fields.image.fields.file.url;
             return { title, artistName, price, id, image, category, priceRange, materials, materialsDescription, size, status, exhibitDescription };
         });
