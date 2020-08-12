@@ -12,7 +12,8 @@ export default class Exhibits extends Component {
             exhibits: [],
             images: [],
             names: [],
-            ids: []
+            ids: [],
+            dates: []
         }
     }
 
@@ -21,6 +22,7 @@ export default class Exhibits extends Component {
         // var tempExhibits = [];
         var tempImages = [];
         var tempNames = [];
+        var tempDates = [];
         var tempIDs = [];
         getExhibits().then((response) => {
             temp = response;
@@ -28,13 +30,14 @@ export default class Exhibits extends Component {
                 // tempExhibits.push(<Exhibit key={i} name={item.name} id={item.id} img={item.image} date={item.date.split("T")[0]} artworks={item.artworks} />);
                 tempIDs.push(item.id);
                 tempImages.push(item.image);
-                var tempDate = item.date.split('T')[0];
-                tempNames.push(item.name.toUpperCase() + '  -  ' + tempDate.replace(/-/g, '/'));
+                tempNames.push(item.name.toUpperCase());
+                tempDates.push(item.date);
             });
             this.setState({
                 images: tempImages,
                 names: tempNames,
-                ids: tempIDs
+                ids: tempIDs,
+                dates: tempDates
             });
         });
     }
@@ -45,7 +48,7 @@ export default class Exhibits extends Component {
                 <div className="title">
                     <Title text="EXHIBITIONS" color="yellow" />
                 </div>
-                <Slider slides={this.state.images} text={this.state.ids} buttonid="exhibitButton" type="exhibit" link={true} />
+                <Slider slides={this.state.images} text={this.state.ids} buttonid="exhibitButton" type="exhibit" link={true} names={this.state.names} dates={this.state.dates} />
             </div>
         )
     }

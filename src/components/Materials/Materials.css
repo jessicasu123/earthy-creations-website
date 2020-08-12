@@ -31,14 +31,14 @@
     height: 60px;
     right: 0px;
     top: 150px;
-    border: 5px solid white;
+    border-top: 5px solid white;
+    border-left: 5px solid white;
 }
 
 .metal {
     background-color: rgb(245,240,196);
     width: 200px;
     height: 60px;
-    left: 70px;
     bottom: 100px;
     left: 110px;
 }
@@ -73,4 +73,55 @@
     opacity: 0.7;
     cursor: pointer;
     /* color: black; */
+}
+
+@media (max-width: 650px) {
+    .materials div div {
+        font-size: 18px;
+        padding-top: 2px;
+    }
+
+    .paper {
+        width: 85px;
+        height: 45px;
+        left: 0px;
+        top: 35px;
+    }
+
+    .glass {
+        width: 120px;
+        height: 70px;
+        top: 5px;
+        left: 90px;
+    }
+
+    .plastic {
+        width: 110px;
+        height: 30px;
+        right: 0px;
+        top: 45px;
+        border-top: 3px solid white;
+        border-left: 3px solid white;
+    }
+
+    .metal {
+        width: 100px;
+        height: 30px;
+        bottom: 105px;
+        left: 60px;
+    }
+
+    .wood {
+        width: 100px;
+        height: 60px;
+        bottom: 80px;
+        left: 165px;
+    }
+
+    .materials div .browseMaterials {
+        font-size: 24px;
+        top: 95px;
+        width: 300px;
+        letter-spacing: 1px;
+    }
 }

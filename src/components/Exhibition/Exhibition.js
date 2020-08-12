@@ -32,8 +32,10 @@ export default class Spotlight extends Component {
                     <Redirect to="/exhibits/shatteredearth" />
                     :
                     <div className="exhibition">
-                        <div className="exhibitionBox"></div>
-                        <div style={exhibitionStyle} className="exhibitionImage"></div>
+                        <div className="exhibitionWrapper">
+                            <div className="exhibitionBox"></div>
+                            <div style={exhibitionStyle} className="exhibitionImage"></div>
+                        </div>
                         <div className="exhibitionName">
                             <p className="exhibitions">EXHIBITIONS</p>
                             <p className="exhibitionsName" onClick={this.handleClick}>Shattered Earth</p>
