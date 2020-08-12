@@ -1,16 +1,33 @@
 .offset-info-box {
     position: relative;
 }
-.background-box-with-title {
+
+.background-box-left {
     background-color: #E5E5E5;
     width: 461px;
     height: 177px;
+}
+
+.background-box-right {
+    background-color: #E5E5E5;
+    width: 461px;
+    height: 177px;
+    position: absolute;
+    right: 0px;
 }
 
 .background-box-info-left {
     position: absolute;
     left: 30px;
     top: 30px;
+}
+
+.background-box-info-right {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    text-align: right;
+
 }
 
 .background-box-title {

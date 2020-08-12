@@ -11,10 +11,17 @@ export default class LeftOffsetInfoBox extends Component {
         }
     }
     render() {
+        let infoClass = "background-box-info-left";
+        let backgroundClass = "background-box-left";
+        if (! this.state.isLeftOffset) {
+            infoClass = "background-box-info-right";
+            backgroundClass = "background-box-right";
+        }
+
         return (
             <div className="offset-info-box">
-                <div className="background-box-with-title"/>
-                <div className="background-box-info-left">
+                <div className={backgroundClass}/>
+                <div className={infoClass}>
                     <div className="background-box-title">{this.state.title.toUpperCase()}</div>
                     <div className="background-box-description">{this.state.info}</div>    
                 </div>

@@ -2,10 +2,12 @@
     position: relative;
 }
 
-.background-box {
+.materials-background-box {
     background-color: #E5E5E5;
     width: 314px;
     height: 148px;
+    position: absolute;
+    right: 0;
 }
 
 .other-materials-title-text {
@@ -25,4 +27,5 @@
     text-align: center;
     top: 70px;
     color: #848383;
+    width: 100%;
 }

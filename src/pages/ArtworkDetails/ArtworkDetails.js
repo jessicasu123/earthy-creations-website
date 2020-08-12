@@ -8,7 +8,8 @@ import OffsetInfoBox from '../../components/OffsetInfoBox/OffsetInfoBox';
 const ADDED_TO_CART = "ADDED TO CART"; 
 const ALREADY_IN_CART = "ALREADY IN CART"; 
 const TEMP_ARTIST_DESCRIPTION = "After graduating from the Gemological Institute of America in New York, I decided to combine my love of stones and social concerns to create upcycled jewelry. I started to create jewelry out of reused metals and, in addition to the actual crystalline parts usually used in luxury, I used the parts of the rock that are usually discarded.";
-
+const TEMP_PIECE_DESCRIPTION =
+  "After graduating from the Gemological Institute of America in New York, I decided to combine my love of stones and social concerns to create upcycled jewelry. ";
 export default class ArtworkDetails extends Component {
     constructor(props) {
         super(props); 
@@ -82,13 +83,16 @@ export default class ArtworkDetails extends Component {
                     <div className="blue-box"/>
                     <div className="green-box"/>
                     <div className="recycled-materials-title">RECYCLED MATERIALS</div>
-                     {this.showMaterials()}
+                    {this.showMaterials()}
                 </div>
                 <div className="other-materials">
                     <MaterialsBox materialsDescription={artwork.materialsDescription}/>
                 </div>
                 <div className="info-box-artist">
                     <OffsetInfoBox title="About the Artist" info={TEMP_ARTIST_DESCRIPTION} isLeftOffset={true}/>
+                </div>
+                <div className="info-box-piece">
+                    <OffsetInfoBox title="About the Piece" info={TEMP_PIECE_DESCRIPTION} isLeftOffset={false}/>
                 </div>
             <Modal modalText={this.state.modalText} buttonText="View Cart" show={this.state.showAddToCartModal} onClose={this.closeModal}
             artwork={this.state.artwork}/>

@@ -1,6 +1,8 @@
 
 .detail-container {
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
 }
 .detail-row {
     display: flex;
@@ -186,9 +188,16 @@
 }
 
 .info-box-artist {
-    margin-top: 260px;
+    margin-top: 225px;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+.info-box-piece {
+    margin-top: 150px;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 150px;
 }
 
 @media screen and (max-width: 800px) {

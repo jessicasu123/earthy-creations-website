@@ -3,6 +3,7 @@ import Artwork from '../../components/Artwork';
 import CheckBoxGroup from '../../components/CheckBoxGroup/CheckBoxGroup';
 import './Artworks.css';
 import Title from '../../components/Title/Title';
+import LoadingSign from '../../components/LoadingSign/LoadingSign';
 import { getArtworks } from '../../api.js';
 import SearchField from '../../components/SearchField/SearchField';
 import {withRouter} from 'react-router-dom';
@@ -104,6 +105,10 @@ class Artworks extends Component {
                     <div className="column right">
                         <div className="products-center">
                             {this.showArtworks()}
+                        </div>
+                        <LoadingSign />
+                        <div className="num-artwork-loading-text">
+                            Showing {this.state.artworks.length} of total items...
                         </div>
                     </div>
                 </div>

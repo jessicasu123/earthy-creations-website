@@ -27,12 +27,13 @@
 }
 
 .products-center {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-row-gap: 2rem; 
     grid-column-gap: 2rem; 
     grid-auto-rows: 1fr;
+    margin-bottom: 40px;
 }
 
 .product {
@@ -101,6 +102,12 @@
     background-color:rgb(221, 219, 219);
     border: none;
     width: 80%; 
+}
+
+.num-artwork-loading-text {
+    text-align: center;
+    margin-top: 30px;
+    color: #848383;
 }
 
 @media screen and (max-width: 900px) {
