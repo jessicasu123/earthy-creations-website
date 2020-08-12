@@ -9,6 +9,6 @@ This is a website for **Earthy Creations**, an organization started by Duke stud
 
 ### Contributors 
 
-Jessica Su
-Rithik Jain
-Geshna Aggarwal
+* Jessica Su
+* Rithik Jain
+* Geshna Aggarwal
