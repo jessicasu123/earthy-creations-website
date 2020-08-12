@@ -5,6 +5,7 @@ import Title from '../../components/Title/Title';
 import LoadMoreSign from '../../components/LoadMoreSign/LoadMoreSign';
 import EmptyText from '../../components/EmptyText/EmptyText';
 import SearchField from '../../components/SearchField/SearchField';
+import CategoriesUnderline from '../../images/categories_underline.png';
 import { getArtworks } from '../../api.js';
 import {withRouter} from 'react-router-dom';
 import './Artworks.css';
@@ -111,14 +112,22 @@ class Artworks extends Component {
                     <div className="column left">
                         <SearchField processSearch={this.searchArtworks} placeholder="Search Artworks"/>
                         <div onChange={(e) => {this.filterArtworks()}}>
-                            <p className="checkBoxGroup-label"> Categories </p>
-                            <hr className="checkBoxGroup-line" />
+                            <div className="checkBoxGroup-label">
+                                Categories 
+                                <img className="checkbox-underline" src={CategoriesUnderline} />
+                            </div>
                             <CheckBoxGroup type="category" items={this.state.categories} filters={this.state.selectedFilters} add={this.props.location.state ? this.props.location.state.category : ''}/>
-                            <p className="checkBoxGroup-label"> Materials </p>
-                            <hr className="checkBoxGroup-line" />
+                
+                            <div className="checkBoxGroup-label">
+                                Materials
+                                <img className="checkbox-underline" src={CategoriesUnderline} />
+                            </div>
                             <CheckBoxGroup type="materials" items={this.state.materials} filters={this.state.selectedFilters} add={this.props.location.state ? this.props.location.state.category : ''}/>
-                            <p className="checkBoxGroup-label"> Prices </p>
-                            <hr className="checkBoxGroup-line" />
+                            
+                            <div className="checkBoxGroup-label">
+                                Prices
+                                <img className="checkbox-underline" src={CategoriesUnderline} />
+                            </div>
                             <CheckBoxGroup type="price" items={this.state.prices} filters={this.state.selectedFilters} />
                         </div>
                     </div>
@@ -126,7 +135,6 @@ class Artworks extends Component {
                         <div className="products-center">
                             {this.showArtworks()}
                         </div>
-                        {this.state.artworks.length > 0 && this.showLoadMore()}
                     </div>
 
                     {this.state.artworks.length == 0 && this.showNoArtworksText()}

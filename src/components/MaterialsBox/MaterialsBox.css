@@ -29,3 +29,13 @@
     color: #848383;
     width: 100%;
 }
+
+@media screen and (max-width: 800px) {
+    .materials-background-box {
+        margin: auto;
+        left: 0;
+    }
+    .other-materials-title-text {
+        font-size: 25px;
+    }
+}

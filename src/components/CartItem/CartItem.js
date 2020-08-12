@@ -16,7 +16,7 @@ export default class CartItem extends Component {
         const cartItemsJSON = JSON.parse(localStorage.getItem(LOCAL_STORAGE_CART_KEY));
         const currArtwork = this.state.artwork;
         let filteredCartItems = cartItemsJSON.filter(function (item) {
-            return !(item.artwork.title===currArtwork.title);
+            return !(item.artwork.id===currArtwork.id);
         });
         localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(filteredCartItems));
         this.state.updateCartItems(JSON.parse(localStorage.getItem(LOCAL_STORAGE_CART_KEY)));

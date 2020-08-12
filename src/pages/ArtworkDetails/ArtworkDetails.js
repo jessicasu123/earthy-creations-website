@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Modal from '../../components/Modal/Modal';
 import MaterialsBox from '../../components/MaterialsBox/MaterialsBox';
 import OffsetInfoBox from '../../components/OffsetInfoBox/OffsetInfoBox';
+import RecycledMaterialsBoxes from '../../images/recycled_materials.png';
 
 const ADDED_TO_CART = "ADDED TO CART"; 
 const ALREADY_IN_CART = "ALREADY IN CART"; 
@@ -26,12 +27,11 @@ export default class ArtworkDetails extends Component {
         } else {
             const currCartItems = localStorage.getItem('cart'); 
             const currCartItemsJSON = JSON.parse(currCartItems); 
-            currCartItemsJSON.push(this.state.artwork);
-            // if (! currCartItemsJSON.some(artwork => artwork.artwork.id === this.state.artwork.artwork.id)) {
-            //     currCartItemsJSON.push(this.state.artwork);
-            // } else {
-            //     this.setState({modalText: ALREADY_IN_CART}); 
-            // }
+            if (! currCartItemsJSON.some(artwork => artwork.artwork.id === this.state.artwork.artwork.id)) {
+                currCartItemsJSON.push(this.state.artwork);
+            } else {
+                this.setState({modalText: ALREADY_IN_CART}); 
+            }
             localStorage.setItem('cart', JSON.stringify(currCartItemsJSON)); 
         }
         this.showModal(); 
@@ -76,15 +76,18 @@ export default class ArtworkDetails extends Component {
                     </div>
                 </div>
                 <div className="detail-recycled-materials">
-                    <div className="yellow-box"/>
+                    <img className="detail-recycled-materials-image" src={RecycledMaterialsBoxes} alt="Recycled Materials Boxes"/>
+                    {/* <div className="yellow-box"/>
                     <div className="pink-box"/>
                     <div className="orange-box"/>
                     <div className="dark-green-box"/>
                     <div className="purple-box"/>
                     <div className="blue-box"/>
-                    <div className="green-box"/>
-                    <div className="recycled-materials-title">RECYCLED MATERIALS</div>
-                    {this.showMaterials()}
+                    <div className="green-box"/> */}
+                    <div className="recycled-materials-info">
+                        <div className="recycled-materials-title">RECYCLED MATERIALS</div>
+                        {this.showMaterials()}
+                    </div>
                 </div>
                 <div className="other-materials">
                     <MaterialsBox materialsDescription={artwork.materialsDescription}/>
