@@ -16,7 +16,8 @@ export default class Exhibits extends Component {
             date: '',
             id: '',
             slideImages: [],
-            shrink: false
+            shrink: false,
+            description: ''
         }
     }
 
@@ -31,7 +32,8 @@ export default class Exhibits extends Component {
                         id: item.id,
                         date: item.date,
                         name: item.name,
-                        slideImages: item.slideImages
+                        slideImages: item.slideImages,
+                        description: item.description
                     });
                     artworks = item.artworks;
                 }
@@ -65,11 +67,13 @@ export default class Exhibits extends Component {
     }
 
     render() {
+        console.log(this.state.description);
         return (
             <div className="exhibit">
                 <div className="title">
                     <Title text={this.state.name.toUpperCase()} color="yellow" />
                 </div>
+                <p className="individualExhibitDescription">{this.state.description}</p>
                 <Slider slides={this.state.slideImages} buttonid="individualExhibitButton" type="individualExhibit" link={false} />
                 <div>
                     {this.state.artworks.map((artwork, i) => (

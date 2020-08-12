@@ -28,14 +28,14 @@ async function getExhibits(){
     }).then((response) => {
         exhibitsFetch = response.items;
         exhibitsFetch = exhibitsFetch.map((item) => {
-            const {name, artworks, date, id} = item.fields;
+            const {name, artworks, date, id, description} = item.fields;
             // const {id} = item.sys;
             const image = item.fields.image.fields.file.url;
             const slideImages = [];
             item.fields.slideImages.forEach((image, i) => {
                 slideImages.push(image.fields.file.url);
             });
-            return {name, artworks, date, id, image, slideImages};
+            return {name, artworks, date, id, image, slideImages, description};
         });
     });
     return exhibitsFetch;
