@@ -57,3 +57,18 @@
     margin-top: auto; 
     font-weight: 500;
 }
+
+@media screen and (max-width: 500px) {
+    .cart-product-image {
+        width: 75px;
+        height: 75px;
+    }
+
+    .cart-artwork-name {
+        font-size: 16px;
+    }
+
+    .cart-artist-name {
+        font-size: 14px;
+    }
+}

@@ -27,12 +27,13 @@
 }
 
 .products-center {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-row-gap: 1rem; 
+    grid-row-gap: 2rem; 
     grid-column-gap: 2rem; 
     grid-auto-rows: 1fr;
+    margin-bottom: 40px;
 }
 
 .product {
@@ -80,18 +81,21 @@
     padding-top: 3px; 
     font-size: 16px;
     font-style: italic;
+    color: #4581B8;
 }
 
 /*price text */
 .price { 
     padding-top: 10px;
-    font-size: 17px;
+    font-size: 18px;
+    color: #4581B8;
 }
 
 .checkBoxGroup-label {
-    font-size: 20px; 
-    padding-bottom: 5px; 
+    font-size: 25px; 
+    padding-bottom: 20px; 
     padding-top: 20px; 
+    position: relative;
 }
 
 .checkBoxGroup-line {
@@ -99,6 +103,21 @@
     background-color:rgb(221, 219, 219);
     border: none;
     width: 80%; 
+}
+
+.num-artwork-loading-text {
+    text-align: center;
+    margin-top: 30px;
+    color: #848383;
+}
+
+.checkbox-underline {
+    width: 160px;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    top: 40px;
 }
 
 @media screen and (max-width: 900px) {

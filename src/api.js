@@ -5,10 +5,12 @@ var client = contentful.createClient({
     accessToken: "zpvytqz4qKh306Me6gyA3XEitF8nklsBPREm4MjmC1s",
 });
 
-export async function getArtworks() {
-    let artworksFetch; 
+async function getArtworks(numArtworks) {
+    let artworksFetch;
     await client.getEntries({
         content_type: "artwork",
+        limit: 12,
+        skip: numArtworks,
     }).then((response) => {
         artworksFetch = response.items;
         artworksFetch = artworksFetch.map((item) => {
@@ -17,6 +19,28 @@ export async function getArtworks() {
             const image = item.fields.image.fields.file.url;
             return { title, artistName, price, id, image, category, priceRange, materials, materialsDescription, size, status, exhibitDescription };
         });
-    }); 
-    return artworksFetch; 
+    });
+    return artworksFetch;
 }
+
+async function getExhibits(){
+    let exhibitsFetch;
+    await client.getEntries({
+        content_type: "exhibits"
+    }).then((response) => {
+        exhibitsFetch = response.items;
+        exhibitsFetch = exhibitsFetch.map((item) => {
+            const {name, artworks, date, id, description} = item.fields;
+            // const {id} = item.sys;
+            const image = item.fields.image.fields.file.url;
+            const slideImages = [];
+            item.fields.slideImages.forEach((image, i) => {
+                slideImages.push(image.fields.file.url);
+            });
+            return {name, artworks, date, id, image, slideImages, description};
+        });
+    });
+    return exhibitsFetch;
+}
+
+export {getArtworks, getExhibits}

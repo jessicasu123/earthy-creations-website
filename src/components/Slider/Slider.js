@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import "./Slider.css";
-import SliderContent from './SliderContent'
-import Slide from './Slide'
-import Arrow from './Arrow'
-import Dots from './Dots'
+import SliderContent from './SliderContent';
+import Arrow from './Arrow';
+import Dots from './Dots';
+import WhiteButton from '../WhiteButton/WhiteButton';
 
 export default class Slider extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ export default class Slider extends Component {
     }
 
     getWidth() {
-        return 70;
+        return 90;
     };
 
     nextSlide = () => {
@@ -34,14 +34,14 @@ export default class Slider extends Component {
                 ...this.state,
                 translate: 0,
                 currIndex: 0
-            })
+            });
         }
 
         this.setState({
             ...this.state,
             currIndex: this.state.currIndex + 1,
             translate: (this.state.currIndex + 1) * this.getWidth()
-        })
+        });
     };
 
     prevSlide = () => {
@@ -50,14 +50,14 @@ export default class Slider extends Component {
                 ...this.state,
                 translate: (this.props.slides.length - 1) * this.getWidth(),
                 currIndex: this.props.slides.length - 1
-            })
+            });
         }
 
         this.setState({
             ...this.state,
             currIndex: this.state.currIndex - 1,
             translate: (this.state.currIndex - 1) * this.getWidth()
-        })
+        });
     };
 
     changeSlide(newIndex) {
@@ -76,21 +76,26 @@ export default class Slider extends Component {
 
     render() {
         return (
-            <div className="slider">
-                <SliderContent translate={this.state.translate} transition={this.state.transition} width={this.getWidth() * this.props.slides.length} slides={this.props.slides} />
-                <Arrow direction="left"
-                    handleClick={() => {
-                        this.prevSlide();
-                        this.resetInterval();
-                    }}
-                />
-                <Arrow direction="right"
-                    handleClick={() => {
-                        this.nextSlide();
-                        this.resetInterval();
-                    }}
-                />
-                <Dots slides={this.props.slides} currIndex={this.state.currIndex} handleClick={this.changeSlide} />
+            <div className="slider fade-in">
+                <SliderContent translate={this.state.translate} transition={this.state.transition} width={this.getWidth() * this.props.slides.length} slides={this.props.slides} type={this.props.type} text={this.props.text} link={this.props.link} names={this.props.names} dates={this.props.dates} />
+                {this.props.slides.length > 1 &&
+                    <React.Fragment>
+                        <Arrow direction="left"
+                            handleClick={() => {
+                                this.prevSlide();
+                                this.resetInterval();
+                            }}
+                        />
+                        <Arrow direction="right"
+                            handleClick={() => {
+                                this.nextSlide();
+                                this.resetInterval();
+                            }}
+                        />
+                        <Dots slides={this.props.slides} currIndex={this.state.currIndex} handleClick={this.changeSlide} />
+                        {this.props.link && false && <WhiteButton text={this.props.text} path={this.props.path} buttonid={this.props.buttonid} />}
+                    </React.Fragment>
+                }
             </div>
         );
     }

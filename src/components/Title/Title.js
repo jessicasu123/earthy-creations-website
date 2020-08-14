@@ -13,6 +13,16 @@ export default class Title extends Component {
     }
 
     componentDidMount() {
+        this.setSize();
+    }
+
+    componentDidUpdate(prevProps){
+        if(this.props.text !== prevProps.text){
+            this.setSize();
+        }
+    }
+
+    setSize(){
         const newHeight = this.divElement.clientHeight;
         const newWidth = this.divElement.clientWidth;
         this.setState({height: newHeight, width: newWidth});

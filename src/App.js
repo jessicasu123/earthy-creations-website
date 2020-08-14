@@ -8,7 +8,8 @@ import About from './pages/About/About';
 import Artists from './pages/Artists/Artists';
 import Blog from './pages/Blog';
 import Cart from './pages/Cart/Cart';
-import Exhibits from './pages/Exhibits';
+import Exhibits from './pages/Exhibits/Exhibits';
+import Exhibit from './pages/Exhibit/Exhibit';
 import ArtworkDetails from './pages/ArtworkDetails/ArtworkDetails';
 import Footer from './components/Footer/Footer';
 import Team from './pages/Team/Team';
@@ -25,7 +26,8 @@ function App() {
         <Route path="/details" component={ArtworkDetails}></Route>
         <Route path="/blog" component={Blog}></Route>
         <Route path="/cart" component={Cart}></Route>
-        <Route path="/exhibits" component={Exhibits}></Route>
+        <Route exact path="/exhibits" component={Exhibits}></Route>
+        <Route path="/exhibits" component={Exhibit}></Route>
         <Route path="/" component={Home}></Route>
       </Switch>
       <Footer></Footer>

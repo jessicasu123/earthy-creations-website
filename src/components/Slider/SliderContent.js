@@ -3,10 +3,6 @@ import './SliderContent.css';
 import Slide from './Slide.js'
 
 export default class SliderContent extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     getWidth() {
         return this.props.width / this.props.slides.length;
     }
@@ -20,7 +16,10 @@ export default class SliderContent extends Component {
         return (
             <div style={styling} className="sliderContent">
                 {this.props.slides.map((slide, i) => (
-                    <Slide key={slide + i} content={slide} width={this.getWidth()} />
+                    this.props.type === "exhibit" ?
+                        <Slide key={slide + i} content={slide} width={this.getWidth()} type={this.props.type} text={this.props.text[i]} link={this.props.link} name={this.props.names[i]} date={this.props.dates[i]} />
+                        :
+                        <Slide key={slide + i} content={slide} width={this.getWidth()} type={this.props.type} text={this.props.text} link={this.props.link} />
                 ))}
             </div>
         )

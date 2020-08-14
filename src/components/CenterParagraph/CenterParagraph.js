@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 export default class CenterParagraph extends Component {
-    constructor(props){
-        super(props);
-    }
-
     render(){
         const styling = {
             fontSize: this.props.fontSize + "px",

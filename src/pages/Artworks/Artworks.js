@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import Artwork from '../../components/Artwork';
 import CheckBoxGroup from '../../components/CheckBoxGroup/CheckBoxGroup';
-import './Artworks.css';
 import Title from '../../components/Title/Title';
-import { getArtworks } from '../../api.js';
+import LoadMoreSign from '../../components/LoadMoreSign/LoadMoreSign';
+import EmptyText from '../../components/EmptyText/EmptyText';
 import SearchField from '../../components/SearchField/SearchField';
+import CategoriesUnderline from '../../images/categories_underline.png';
+import MaterialsUnderline from '../../images/materials_underline.png';
+import PriceUnderline from '../../images/price_underline.png';
+
+import { getArtworks } from '../../api.js';
 import {withRouter} from 'react-router-dom';
+import './Artworks.css';
 
 class Artworks extends Component {
     state={
@@ -19,23 +25,29 @@ class Artworks extends Component {
     }
 
     componentDidMount() {
-        getArtworks().then((response) => {
-            this.setState({artworks: response, allArtworks: response});
+        this.loadArtworks();
+    }
+
+    loadArtworks () {
+        const numArtworks = this.state.artworks.length;
+        getArtworks(numArtworks).then((response) => {
+            const updatedArtworks = this.state.artworks.concat(response);
+            this.setState({ artworks: updatedArtworks, allArtworks: updatedArtworks });
         });
     }
 
     filterArtworks() {
-        let itemsToConsider = this.state.allArtworks; 
+        let itemsToConsider = this.state.allArtworks;
         for (let filterType of this.state.selectedFilters.keys()) {
             let filteredItems = [];
             let filters = this.state.selectedFilters.get(filterType);
             if (filters.size > 0) {
                 itemsToConsider.forEach((item) => {
                     let artworkValue = this.getArtworkValueFromFilterType(filterType, item);
-                    let allArtworkValues = new Set(artworkValue.split(",")); 
+                    let allArtworkValues = new Set(artworkValue.split(","));
                     let intersect = new Set([...filters].filter(i => allArtworkValues.has(i)));
                     if (intersect.size > 0) {
-                        filteredItems.push(item); 
+                        filteredItems.push(item);
                     }
                 })
                 itemsToConsider = filteredItems;
@@ -56,7 +68,7 @@ class Artworks extends Component {
         });
         this.setState({ artworks: matchingArtworks });
         }
-        
+
     }
 
     getArtworkValueFromFilterType(filterType, item) {
@@ -65,8 +77,8 @@ class Artworks extends Component {
                 return item.category;
             case "price":
                 return item.priceRange;
-            case "materials": 
-                return item.materials; 
+            case "materials":
+                return item.materials;
             default:
                 return "";
         }
@@ -80,6 +92,19 @@ class Artworks extends Component {
         this.state.artworks.map(this.createArtwork)
     )
 
+    showLoadMore = () => (
+        <React.Fragment>
+            <LoadMoreSign loadItemsAction={(e) => this.loadArtworks()} />
+            <div className="num-artwork-loading-text">
+                Showing {this.state.artworks.length} of total items...
+            </div>
+        </React.Fragment>
+    )
+
+    showNoArtworksText = () => (
+        < EmptyText emptyText = "Sorry, there are no matching pieces." />
+    )
+
     render() {
         return (
             <React.Fragment>
@@ -90,14 +115,22 @@ class Artworks extends Component {
                     <div className="column left">
                         <SearchField processSearch={this.searchArtworks} placeholder="Search Artworks"/>
                         <div onChange={(e) => {this.filterArtworks()}}>
-                            <p className="checkBoxGroup-label"> Categories </p>
-                            <hr className="checkBoxGroup-line" />
+                            <div className="checkBoxGroup-label">
+                                Categories 
+                                <img className="checkbox-underline" src={CategoriesUnderline} />
+                            </div>
                             <CheckBoxGroup type="category" items={this.state.categories} filters={this.state.selectedFilters} add={this.props.location.state ? this.props.location.state.category : ''}/>
-                            <p className="checkBoxGroup-label"> Materials </p>
-                            <hr className="checkBoxGroup-line" />
-                            <CheckBoxGroup type="materials" items={this.state.materials} filters={this.state.selectedFilters}/>
-                            <p className="checkBoxGroup-label"> Prices </p>
-                            <hr className="checkBoxGroup-line" />
+                
+                            <div className="checkBoxGroup-label">
+                                Materials
+                                <img className="checkbox-underline" src={MaterialsUnderline} />
+                            </div>
+                            <CheckBoxGroup type="materials" items={this.state.materials} filters={this.state.selectedFilters} add={this.props.location.state ? this.props.location.state.category : ''}/>
+                            
+                            <div className="checkBoxGroup-label">
+                                Prices
+                                <img className="checkbox-underline" src={PriceUnderline} />
+                            </div>
                             <CheckBoxGroup type="price" items={this.state.prices} filters={this.state.selectedFilters} />
                         </div>
                     </div>
@@ -106,6 +139,8 @@ class Artworks extends Component {
                             {this.showArtworks()}
                         </div>
                     </div>
+
+                    {this.state.artworks.length == 0 && this.showNoArtworksText()}
                 </div>
             </React.Fragment>
         )

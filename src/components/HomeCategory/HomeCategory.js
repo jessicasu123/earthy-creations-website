@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import Title from '../../components/Title/Title';
 import './HomeCategory.css';
-import Slider from '../../components/Slider/Slider';
-import slide1 from '../../images/slide_1.jpg';
-import slide2 from '../../images/slide_2.jpg';
-import slide3 from '../../images/slide_3.jpg';
-import slide4 from '../../images/slide_4.jpg';
-import CenterParagraph from '../../components/CenterParagraph/CenterParagraph';
 import {Redirect} from 'react-router-dom';
 
 export default class HomeCategory extends Component {
@@ -32,7 +25,6 @@ export default class HomeCategory extends Component {
         }
         const splitText = this.props.text.split(' ');
         var toSend = '';
-        // console.log(splitText);
         splitText.forEach((item, i) => {
             toSend += item[0] + item.slice(1).toLowerCase()
             toSend += ' ';

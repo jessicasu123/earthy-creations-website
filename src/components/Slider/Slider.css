@@ -1,9 +1,13 @@
 .slider {
     position: relative;
     margin: 0 auto;
-    overflow: hidden;
-    width: 70vw;
-    height: 600px;
+    overflow-x: hidden;
+    width: 90vw;
+    /* height: 600px; */
     margin-top: 20px;
     margin-bottom: 50px;
+    background-color: white;
+    transition: 2s;
+    /* padding-bottom: 40px; */
+    /* background-image: linear-gradient(to top right, black, gray); */
 }

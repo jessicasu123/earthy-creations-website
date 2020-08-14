@@ -16,6 +16,7 @@
 
 .leftArrow {
     width: 50px;
+    /* padding-right: 50px; */
 }
 .leftArrow:focus {
     outline: 0;
@@ -23,7 +24,14 @@
 
 .rightArrow {
     width: 50px;
+    /* padding-left: 50px; */
 }
 .rightArrow:focus {
     outline: 0;
+}
+
+@media (max-width: 500px) {
+    .arrow {
+        display: none;
+    }
 }
