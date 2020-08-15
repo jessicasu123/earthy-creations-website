@@ -13,6 +13,7 @@ import Exhibit from './pages/Exhibit/Exhibit';
 import ArtworkDetails from './pages/ArtworkDetails/ArtworkDetails';
 import Footer from './components/Footer/Footer';
 import Team from './pages/Team/Team';
+import ArtistDetails from './pages/ArtistDetails/ArtistDetails';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about" component={About}></Route>
         <Route path="/team" component={Team}></Route>
         <Route path="/artists" component={Artists}></Route>
+        <Route path="/artistdetails" component={ArtistDetails}></Route>
         <Route path="/shop" component={Artworks}></Route>
         <Route path="/details" component={ArtworkDetails}></Route>
         <Route path="/blog" component={Blog}></Route>

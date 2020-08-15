@@ -43,4 +43,25 @@ async function getExhibits(){
     return exhibitsFetch;
 }
 
-export {getArtworks, getExhibits}
+async function getArtists(){
+    let artistsFetch;
+    await client.getEntries({
+        content_type: "artists"
+        
+    }).then((response) => {
+        artistsFetch = response.items;
+        artistsFetch = artistsFetch.map((item) => {
+            const {name, school, id, bio} = item.fields;
+            // const {id} = item.sys;
+            const image = item.fields.image.fields.file.url;
+            
+            //item.fields.slideImages.forEach((image, i) => {
+            //    slideImages.push(image.fields.file.url);
+            //});
+            return {name, id, image, school, bio};
+        });
+    });
+    return artistsFetch;
+}
+
+export {getArtworks, getExhibits, getArtists}

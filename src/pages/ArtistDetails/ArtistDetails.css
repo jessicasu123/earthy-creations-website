@@ -1,0 +1,51 @@
+.artist-details-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.bio-detail-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.artist-detail-left {
+    margin-left: 10%;
+}
+
+.artist-detail-right {
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-right: 10%;
+    width: 40%;
+}
+.artist-detail-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.artist-detail-img-container{
+    max-width: 500px;
+}
+.navigate-artists {
+    font-size: 18px;
+    height: 30px; 
+}
+
+.artist-link {
+    text-decoration: none;
+}
+
+.back-to-artists {
+    display: inline;
+    color: gray; 
+}
+
+.back-to-artists:hover {
+    color: black; 
+}
+.currArtistName {
+    display: inline; 
+    color: gray;
+}
