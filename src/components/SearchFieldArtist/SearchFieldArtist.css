@@ -1,0 +1,17 @@
+input[type=text1] {
+    width: 100%; 
+    padding-left: 10px; 
+    padding-top: 10px; 
+    padding-bottom: 5px; 
+    font-size: 15px; 
+    font-family: "Avenir", sans-serif;
+    border: 1px solid rgb(163, 163, 163); 
+    color: rgb(151, 151, 151);
+    box-sizing: border-box;
+}
+
+input[type=text1]:focus {
+    outline: none;
+    border: 1px solid black; 
+    color: black; 
+}

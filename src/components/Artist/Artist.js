@@ -1,9 +1,13 @@
 import React, { Component } from 'react'; 
 import {Link} from 'react-router-dom'; 
 import './Artist.css';
+import { getArtists } from '../../api';
+//import { getArtworks } from '../../api';
+//import {withRouter} from 'react-router-dom';
 //import {getArtists} from '../../api.js'
 
 export default class Artwork extends Component {
+    
     
 
     render() {

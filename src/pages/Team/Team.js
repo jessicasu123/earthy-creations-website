@@ -20,6 +20,7 @@ export default class Team extends Component {
                 <div className="title">
                     <Title text="MEET OUR TEAM" color="orange" />
                 </div>
+                <div className="teamPageBelowTitle">
                 <div className="team-row">
                     <div className="team-person" id="kat-box">
                         <img src= {kat} alt="kat" className="team_img"/>
@@ -98,7 +99,7 @@ export default class Team extends Component {
                         <img src= {group} alt="group" className="group"/>
                     </div>
                </div>
-
+               </div>
             </div>
         )
     }

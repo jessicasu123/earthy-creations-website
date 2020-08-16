@@ -4,7 +4,8 @@
     grid-row-gap: 2rem; 
     grid-column-gap: 2rem; 
     grid-auto-rows: 1fr;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 .artists-row{
     padding-top: 20px;
@@ -15,4 +16,7 @@
     content: "";
     display: table;
     clear: both;
+}
+.artists-title{
+    margin-bottom: 10px;
 }

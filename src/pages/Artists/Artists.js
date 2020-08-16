@@ -4,6 +4,7 @@ import Title from '../../components/Title/Title';
 import './Artists.css';
 import { getArtists } from '../../api.js';
 import {withRouter} from 'react-router-dom';
+import SearchFieldArtist from '../../components/SearchFieldArtist/SearchFieldArtist';
 
 export default class Artists extends Component {
     /*constructor(props){
@@ -17,7 +18,9 @@ export default class Artists extends Component {
     }*/
 
     state={
-        artists:[]
+        artists:[],
+        beforeSearchArtists:[],
+        filteredArtists:[]
     }
 
     componentDidMount(){
@@ -37,9 +40,23 @@ export default class Artists extends Component {
                 /*images: currImages,
                 names: currNames,
                 ids: currIDs*/
-                artists: setArtists
+                artists: setArtists,
+                filteredArtists: setArtists
             });
         });
+    }
+
+    searchArtists = searchText => {
+        this.setState({filteredArtists: [] })
+            let resultArtists = []
+        this.state.artists.forEach((artist) => {
+            if (artist.name.toLowerCase().includes(searchText.toLowerCase())) {
+                resultArtists.push(artist);
+            }
+        });
+        this.setState({ filteredArtists: resultArtists });
+        
+
     }
 
     createArtist = artist => (
@@ -47,17 +64,23 @@ export default class Artists extends Component {
     )
 
     showArtists = () => (
-        this.state.artists.map(this.createArtist)
+        this.state.filteredArtists.map(this.createArtist)
     )
+    
 
     render() {
         return (
             <React.Fragment>
                 
-                <div className="title">
+                <div className="title artists-title">
                     <Title text="ARTISTS" color="orange" />
                 </div>
+                
+                
                 <div className="artists-row">
+                <div className="artistsSearch">
+                    <SearchFieldArtist id="artist-search-bar" processSearch={this.searchArtists} placeholder="Search Artists"/>
+                </div>
                     <div className = "artist-boxes">
                         {this.showArtists()}
                     </div>
