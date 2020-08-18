@@ -1,0 +1,33 @@
+.artist-details-product{
+    height: 100%
+}
+
+.artist-art-img-container{
+    position: relative;
+    overflow: hidden;
+    height: 75%;
+}
+.artist-art-img-container:hover .artist-art-product-img {
+    opacity: 0.5;
+}
+.artist-art-product-img{
+    display: block;
+    /*position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; */
+    width: 100%;
+    height: 100%;
+}
+.artist-artworkInformation {
+    height: 25%;
+}
+.artist-artworkTitle{
+    padding-top: 10px;
+    font-size: 20px;
+}
+.artist-artworkSize{
+    padding-top: 3px;
+    font-style: italic;
+    color: #545454;
+}

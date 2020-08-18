@@ -13,13 +13,17 @@
     margin-left: 3%;
     margin-right: 5%;
 }*/
-.row{
+.teamPageBelowTitle{
+    position: relative;
+    top: 50px;
+}
+.team-row{
     display: flex;
     padding-left: 10%;
     padding-right: 10%;
     
 }
-.person {
+.team-person {
     vertical-align: top;
     display: inline-block;
     text-align: left;
@@ -410,14 +414,14 @@
 
   @media only screen and (max-width: 660px) {
     
-    .row{
+    .team-row{
         display: flex;
         flex-wrap: wrap;
         padding-left: 10%;
         padding-right: 10%;
         
     }
-    .person {
+    .team-person {
         vertical-align: top;
         display: inline-block;
         text-align: left;

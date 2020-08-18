@@ -1,0 +1,118 @@
+.artist-details-container { 
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.bio-detail-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.artist-detail-bio{
+    font-size: 18px;
+}
+.artist-detail-left {
+    margin-left: 10%;
+}
+
+.artist-detail-right {
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-right: 10%;
+    width: 40%;
+}
+.artist-detail-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.artist-detail-img-container{
+    max-width: 500px;
+}
+.navigate-artists {
+    font-size: 18px;
+    height: 30px; 
+}
+
+.artist-link {
+    text-decoration: none;
+}
+
+.back-to-artists {
+    display: inline;
+    color: gray; 
+}
+
+.back-to-artists:hover {
+    color: black; 
+}
+.currArtistName {
+    display: inline; 
+    color: gray;
+}
+.artist-details-artwork-boxes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-row-gap: 2rem; 
+    grid-column-gap: 2rem; 
+    grid-auto-rows: 1fr;
+    margin-bottom: 0px;
+}
+.artist-details-artwork-row{
+    /*display: flex;
+    flex-direction: row;
+    justify-content: center;*/
+    
+    padding-top: 50px;
+    padding-left: 6%;
+    padding-right: 6%;
+    
+
+}
+.artists-details-artwork-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.artist-details-subheader{
+
+    text-align: center;
+    font-size: 35px;
+    margin-top: 50px;
+    position: relative;
+}
+.artist-details-subheader-prev{
+
+    text-align: center;
+    font-size: 35px;
+    position: relative;
+}
+.artist-details-subheader-underline{
+    /*position: relative;
+    z-index: -1;
+    top: 38px;
+    left: -220px;*/
+    z-index: -1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    position: relative;
+    top: -20px;
+}
+.empty-text-artworks{
+    font-size: 20px;
+    color: gray;
+    text-align: center;
+    position: relative;
+    top: -30px;
+    width: 100%;
+}
+.empty-text-prev{
+    font-size: 20px;
+    color: gray;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    width: 100%;
+}

@@ -5,7 +5,7 @@ import backgroundImage from '../../images/about-background-image.png';
 export default class About extends Component {
     render() {
         return (
-            <div className = "page">
+            <div className = "about-page">
                 <img src= {backgroundImage} alt="backgroundImage" className="backgroundImage"/>
 
                 <div className = "backgroundBox">

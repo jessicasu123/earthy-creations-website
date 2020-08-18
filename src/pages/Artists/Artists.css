@@ -1,0 +1,22 @@
+.artist-boxes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-row-gap: 2rem; 
+    grid-column-gap: 2rem; 
+    grid-auto-rows: 1fr;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.artists-row{
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.artists-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.artists-title{
+    margin-bottom: 10px;
+}
