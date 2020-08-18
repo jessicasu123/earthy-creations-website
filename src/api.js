@@ -1,16 +1,23 @@
-
+/**
+ * This class is responsible for making all the API calls to contenful.
+ */
 var contentful = require('contentful');
 var client = contentful.createClient({
     space: "7vckoyge62su",
     accessToken: "zpvytqz4qKh306Me6gyA3XEitF8nklsBPREm4MjmC1s",
 });
 
-async function getArtworks(numArtworks) {
+/**
+ * Returns all the artworks that are under the content_type "artwork".
+ * Has fields such as id, title, artist name, price, etc.
+ * 
+ * Will be called by the Artworks Page to render all the artworks.
+ */
+async function getArtworks() {
     let artworksFetch;
     await client.getEntries({
         content_type: "artwork",
         limit: 12,
-        skip: numArtworks,
     }).then((response) => {
         artworksFetch = response.items;
         artworksFetch = artworksFetch.map((item) => {

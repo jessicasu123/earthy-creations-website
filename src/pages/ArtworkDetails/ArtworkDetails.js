@@ -5,12 +5,29 @@ import Modal from '../../components/Modal/Modal';
 import MaterialsBox from '../../components/MaterialsBox/MaterialsBox';
 import OffsetInfoBox from '../../components/OffsetInfoBox/OffsetInfoBox';
 import RecycledMaterialsBoxes from '../../images/recycled_materials.png';
+import constants from '../../constants.json';
 
+const LOCAL_STORAGE_CART_KEY = constants.local_storage_cart_key;
 const ADDED_TO_CART = "ADDED TO CART"; 
 const ALREADY_IN_CART = "ALREADY IN CART"; 
+
+/**
+ * Temporary vars for the artist/piece description - this should eventually be pulled from backend
+ */
 const TEMP_ARTIST_DESCRIPTION = "After graduating from the Gemological Institute of America in New York, I decided to combine my love of stones and social concerns to create upcycled jewelry. I started to create jewelry out of reused metals and, in addition to the actual crystalline parts usually used in luxury, I used the parts of the rock that are usually discarded.";
-const TEMP_PIECE_DESCRIPTION =
-  "After graduating from the Gemological Institute of America in New York, I decided to combine my love of stones and social concerns to create upcycled jewelry. ";
+const TEMP_PIECE_DESCRIPTION = "After graduating from the Gemological Institute of America in New York, I decided to combine my love of stones and social concerns to create upcycled jewelry. ";
+
+/**
+ * Artwork Details Page. Has image of the artwork, information about the artwork, and 
+ * ability to add the artwork to the cart.
+ * 
+ * It also includes additional information such as the recycled materials used, the other
+ * materials, and info about the artist/piece.
+ * 
+ * Props:
+ * - location.state: represents an artwork object that is passed in through the <Link> component because clicking an Artwork links to the ArtworkDetails
+ *      ( see Components/Artworks.js --> onClick action for clicking on an artwork)
+ */
 export default class ArtworkDetails extends Component {
     constructor(props) {
         super(props); 
@@ -20,23 +37,36 @@ export default class ArtworkDetails extends Component {
             modalText: ADDED_TO_CART, 
         }; 
     }
+
+    /**
+     * Called when adding an item to the cart.
+     * 
+     * Local Storage is being used to persist what a user stores in their cart.
+     * The key for the storage is 'cart', and the value is the list of artworks in their cart.
+     */
     addToCart() {
-        if (localStorage.getItem('cart')===null) {
+        if (localStorage.getItem(LOCAL_STORAGE_CART_KEY)===null) {
             const cartItems = [this.state.artwork]; 
-            localStorage.setItem('cart', JSON.stringify(cartItems)); 
+            localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(cartItems)); 
         } else {
-            const currCartItems = localStorage.getItem('cart'); 
+            const currCartItems = localStorage.getItem(LOCAL_STORAGE_CART_KEY); 
             const currCartItemsJSON = JSON.parse(currCartItems); 
             if (! currCartItemsJSON.some(artwork => artwork.artwork.id === this.state.artwork.artwork.id)) {
                 currCartItemsJSON.push(this.state.artwork);
             } else {
                 this.setState({modalText: ALREADY_IN_CART}); 
             }
-            localStorage.setItem('cart', JSON.stringify(currCartItemsJSON)); 
+            localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(currCartItemsJSON)); 
         }
         this.showModal(); 
     }
 
+    /**
+     * Show the pop-up modal when user chooses to add something to the cart.
+     * 
+     * The heading on the modal will say "Already in Cart" if the user already has
+     * the artwork in their cart.
+     */
     showModal() {
         this.setState({showAddToCartModal: true}); 
     }
@@ -45,11 +75,14 @@ export default class ArtworkDetails extends Component {
         this.setState({showAddToCartModal: false});
     }
 
+    /**
+     * To display each recycled material within the Recycled Materials graphic.
+     */
     createMaterialSubtitle = material => (
         <div className="recycled-materials-subtitle">{material.toUpperCase()}</div>
     )
 
-    showMaterials = () => {
+    showRecycledMaterials = () => {
         return this.state.artwork.artwork.materials.split(',').map(this.createMaterialSubtitle)
     }
 
@@ -75,18 +108,12 @@ export default class ArtworkDetails extends Component {
                             <button className="button-addToCart" onClick={(e) => { this.addToCart()}}>Add to Cart</button>
                     </div>
                 </div>
+
                 <div className="detail-recycled-materials">
                     <img className="detail-recycled-materials-image" src={RecycledMaterialsBoxes} alt="Recycled Materials Boxes"/>
-                    {/* <div className="yellow-box"/>
-                    <div className="pink-box"/>
-                    <div className="orange-box"/>
-                    <div className="dark-green-box"/>
-                    <div className="purple-box"/>
-                    <div className="blue-box"/>
-                    <div className="green-box"/> */}
                     <div className="recycled-materials-info">
                         <div className="recycled-materials-title">RECYCLED MATERIALS</div>
-                        {this.showMaterials()}
+                        {this.showRecycledMaterials()}
                     </div>
                 </div>
                 <div className="other-materials">
@@ -98,6 +125,7 @@ export default class ArtworkDetails extends Component {
                 <div className="info-box-piece">
                     <OffsetInfoBox title="About the Piece" info={TEMP_PIECE_DESCRIPTION} isLeftOffset={false}/>
                 </div>
+            
             <Modal modalText={this.state.modalText} buttonText="View Cart" show={this.state.showAddToCartModal} onClose={this.closeModal}
             artwork={this.state.artwork}/>
             </div>

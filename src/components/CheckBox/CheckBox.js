@@ -1,11 +1,26 @@
 import React, { Component } from 'react';
 import './CheckBox.css';
 
+/**
+ * This component is responsbile for rendering a single checkbox, 
+ * which will be part of a larger check box group.
+ * 
+ * The checkbox can either be 1) deliberately checked by user through a click
+ * action or 2) automatically checked when loading the page (ex. user chooses a category 
+ * on the home page & is redirected to the shop page with a checkbox automatically checked)
+ * 
+ * Props:
+ * - label --> the text associated with the check box
+ * - handleCheckBoxChange --> passed down from parent CheckBoxGroup
+ */
 export default class CheckBox extends Component {
     state = {
         isChecked: false
     }
 
+    /**
+     * Called when user clicks on the checkbox
+     */
     toggleCheckboxChange = () => {
         const { handleCheckboxChange, label} = this.props;
 
@@ -18,6 +33,9 @@ export default class CheckBox extends Component {
         handleCheckboxChange(label);
     }
 
+    /**
+     * To "automatically" click a checkbox when loading the shop page"
+     */
     simulateClick = (event) => {
         setTimeout(() => {
             try{

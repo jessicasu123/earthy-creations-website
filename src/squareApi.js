@@ -1,3 +1,8 @@
+/**
+ * This class is responsible for making API calls to 
+ * SquareConnect in order to create the Checkout page
+ * with the relevant items from the Cart page.
+ */
 var SquareConnect = require('square-connect'); 
 var defaultClient = SquareConnect.ApiClient.instance; 
 
@@ -27,8 +32,6 @@ export async function createCheckout(cartItems) {
         };
     });
 
-    console.log(lineItems);
-
     const request_body = {
         idempotency_key: unique_key,
         order: {
@@ -39,9 +42,7 @@ export async function createCheckout(cartItems) {
     await checkoutAPI.createCheckout(locationID, request_body).then(
         function (data) {
             const response = JSON.stringify(data);
-            console.log("Returned data" + response);
             checkout_URL = data.checkout.checkout_page_url;
-            console.log(checkout_URL);
             return checkout_URL;
         },
         function (error) {

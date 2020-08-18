@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Artwork from '../../components/Artwork';
 import CheckBoxGroup from '../../components/CheckBoxGroup/CheckBoxGroup';
 import Title from '../../components/Title/Title';
-import LoadMoreSign from '../../components/LoadMoreSign/LoadMoreSign';
 import EmptyText from '../../components/EmptyText/EmptyText';
 import SearchField from '../../components/SearchField/SearchField';
 import CategoriesUnderline from '../../images/categories_underline.png';
@@ -13,6 +12,17 @@ import { getArtworks } from '../../api.js';
 import {withRouter} from 'react-router-dom';
 import './Artworks.css';
 
+/**
+ * Artworks page. 
+ * Responsible for rendering filtering options, as well all the artworks in a grid format.
+ * 
+ * State: 
+ * - artworks: the artworks to be displayed at any point (will change as a result of filtering)
+ * - allArtworks: ALL the artworks available from the backend; need this variable to be able to reset filtering options (does NOT change as a result of filtering)
+ * - categories, prices, materials: lists that represent the names of the CheckBoxes that should be rendered under that type
+ * - selectedFilters: a map that links the type (eg. categories) to the filters that are selected within that type 
+ *      (eg. ["Sculpture"] if the user selected "Sculpture" CheckBox from the "Categories" CheckBoxGroup)
+ */
 class Artworks extends Component {
     state={
         artworks:[],
@@ -21,21 +31,34 @@ class Artworks extends Component {
         materials: ["Glass", "Paper", "Plastic", "Wood", "Metal"],
         selectedFilters: new Map(),
         allArtworks:[],
-        beforeSearchArtworks:[]
     }
 
     componentDidMount() {
         this.loadArtworks();
     }
 
+    /**
+     * Called to get the artworks whenever the Artworks page is loaded.
+     * 
+     * getArtworks includes an API call to contentful to fetch the artworks.
+     */
     loadArtworks () {
-        const numArtworks = this.state.artworks.length;
-        getArtworks(numArtworks).then((response) => {
-            const updatedArtworks = this.state.artworks.concat(response);
-            this.setState({ artworks: updatedArtworks, allArtworks: updatedArtworks });
+        getArtworks().then((response) => {
+            this.setState({ artworks: response, allArtworks: response });
         });
     }
 
+    /**
+     * Called when any checkbox in any CheckBoxGroup is selected.
+     * Filters within a CheckBox group should add on to each other,
+     * but filters across different CheckBox groups should overlap with each other.
+     * 
+     * Eg. if I select 'Sculture' and 'Paintings' within the 'Categories' CheckBoxGroup,
+     * then the artworks shown should be Sculptures OR Paintings.
+     * However, if I select 'Sculpture' from the 'Categories' CheckBoxGroup, and '100-500' 
+     * from the 'Prices' CheckBoxGroup, the artworks shown should be artworks that are 
+     * Sculptures AND within the price range of 100-500.
+     */
     filterArtworks() {
         let itemsToConsider = this.state.allArtworks;
         for (let filterType of this.state.selectedFilters.keys()) {
@@ -56,21 +79,31 @@ class Artworks extends Component {
         this.setState({artworks: itemsToConsider});
     }
 
+    /**
+     * Called when user types into the SearchField to look for an artwork by TITLE.
+     */
     searchArtworks = searchText => {
         if (!searchText) {
             this.filterArtworks();
         } else {
             let matchingArtworks = []
-        this.state.artworks.forEach((artwork) => {
-            if (artwork.title.toLowerCase().includes(searchText.toLowerCase())) {
-                matchingArtworks.push(artwork);
-            }
-        });
+            this.state.artworks.forEach((artwork) => {
+                if (artwork.title.toLowerCase().includes(searchText.toLowerCase())) {
+                    matchingArtworks.push(artwork);
+                }
+            });
+
         this.setState({ artworks: matchingArtworks });
         }
-
     }
 
+    /**
+     * Based on the filter type, return a different property
+     * of the artwork object.
+     * 
+     * Eg. If filtering by Category, should return the 
+     * category property of the artwork object.
+     */
     getArtworkValueFromFilterType(filterType, item) {
         switch(filterType) {
             case "category":
@@ -84,21 +117,18 @@ class Artworks extends Component {
         }
     }
 
+    /**
+     * Creates a single Artwork component in the grid.
+     */
     createArtwork = artwork => (
         <Artwork key = {artwork.id} artwork = { artwork } />
     )
 
+    /**
+     * Shows a grid of Artwork components.
+     */
     showArtworks = () => (
         this.state.artworks.map(this.createArtwork)
-    )
-
-    showLoadMore = () => (
-        <React.Fragment>
-            <LoadMoreSign loadItemsAction={(e) => this.loadArtworks()} />
-            <div className="num-artwork-loading-text">
-                Showing {this.state.artworks.length} of total items...
-            </div>
-        </React.Fragment>
     )
 
     showNoArtworksText = () => (
@@ -114,6 +144,7 @@ class Artworks extends Component {
                 <div className="artworks-row">
                     <div className="column left">
                         <SearchField processSearch={this.searchArtworks} placeholder="Search Artworks"/>
+                        
                         <div onChange={(e) => {this.filterArtworks()}}>
                             <div className="checkBoxGroup-label">
                                 Categories 
@@ -133,6 +164,7 @@ class Artworks extends Component {
                             </div>
                             <CheckBoxGroup type="price" items={this.state.prices} filters={this.state.selectedFilters} />
                         </div>
+
                     </div>
                     <div className="column right">
                         <div className="products-center">

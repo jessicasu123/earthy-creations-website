@@ -14,6 +14,10 @@ import ArtworkDetails from './pages/ArtworkDetails/ArtworkDetails';
 import Footer from './components/Footer/Footer';
 import Team from './pages/Team/Team';
 
+/**
+ * Responsible for rendering the NavBar, the logic for 
+ * switching/rendering different pages, and the footer.
+ */
 function App() {
   return (
     <React.Fragment>

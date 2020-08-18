@@ -123,69 +123,6 @@
     font-weight: 600;
 }
 
-.yellow-box {
-    background-color: #FCF5D1;
-    width: 294px;
-    height: 83px;
-    top: 0px;
-    left: 40%;
-    position: absolute;
-}
-
-.pink-box {
-    background-color: #F5DDE9;
-    width: 275px;
-    height: 97px;
-    left: 25%;
-    top: 30px;
-    position: absolute;
-}
-
-.orange-box {
-    width: 135px;
-    height: 69px;
-    left: 65%;
-    top: 16%;
-    background-color: #F6DCC8;
-    position: absolute;
-}
-
-.green-box {
-    width: 320px;
-    height: 86px;
-    left: 10%;
-    top: 40%;
-    background-color: #D1E9D7;
-    position: absolute;
-}
-
-.dark-green-box {
-    width: 307px;
-    height: 58px;
-    right: 10%;
-    top: 50%;
-    background-color: #C4DBD6;
-    position: absolute;
-}
-
-.blue-box {
-    width: 174px;
-    height: 43px;
-    left: 25%;
-    top: 75%;
-    background-color: #B7CEE3;
-    position: absolute;
-}
-
-.purple-box {
-    width: 424px;
-    height: 71px;
-    background-color: #E6DCEE;
-    left: 42%;
-    bottom: 0px;
-    position: absolute;
-}
-
 .other-materials {
     margin-right: 10%;
     float: right;

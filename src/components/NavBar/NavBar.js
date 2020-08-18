@@ -4,6 +4,11 @@ import logo from '../../images/earthy-creations-logo.png';
 import cart from '../../images/shopping-cart.png';
 import './NavBar.css';
 
+/**
+ * This component represents the navigation bar to switch
+ * between different pages.
+ */
+
 export default class NavBar extends Component {
     render() {
         return (
