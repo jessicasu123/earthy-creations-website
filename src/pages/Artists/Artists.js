@@ -6,20 +6,19 @@ import { getArtists } from '../../api.js';
 import {withRouter} from 'react-router-dom';
 import SearchFieldArtist from '../../components/SearchFieldArtist/SearchFieldArtist';
 
-export default class Artists extends Component {
-    /*constructor(props){
-        super(props);
+/**
+ * Artists page. 
+ * Displays the artists in a grid format. Also includes a search feature.
+ * 
+ * State: 
+ * - artists: all of the artists - does not change due to searching
+ * - filteredArtists: artists being displayed - can change as a result of searching
+ */
 
-        this.state = {
-            artworks: [],
-            images: [],
-            names: []
-        }
-    }*/
+export default class Artists extends Component {
 
     state={
         artists:[],
-        beforeSearchArtists:[],
         filteredArtists:[]
     }
 

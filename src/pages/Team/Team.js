@@ -13,6 +13,10 @@ import pinkbox from '../../images/team/pinkbox.png';
 import orangebox from '../../images/team/orangebox.png';
 import group from '../../images/team/group.png';
 
+/**
+ * This is the Team page. This page is static and the images and names are hardcoded.
+ */
+
 export default class Team extends Component {
     render() {
         return (
@@ -68,21 +72,7 @@ export default class Team extends Component {
                 </div>
 
 
-               {/*<div>
-                    <div className="kat-d">
-                        <span class="name">Kat Beben</span>
-                        <span class="role">Co-founder</span>
-                    </div>
-                    <div className="bella-d">
-                    <span class="name">Bella Almeida</span>
-                        <span class="role">Founder</span>
-                    </div>
-                    <div className="abby-d">
-                    <span class="name">Abby Shlesinger</span>
-                        <span class="role">Co-founder</span>
-                    </div>
-
-               </div>*/}
+               
 
                <div className="bottom-half-team">
                     <div className="title" id="partnerTitle">

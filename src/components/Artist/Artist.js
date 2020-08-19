@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'; 
 import './Artist.css';
 import { getArtists } from '../../api';
-//import { getArtworks } from '../../api';
-//import {withRouter} from 'react-router-dom';
-//import {getArtists} from '../../api.js'
+
+/**
+ * This component is responsible for rendering a single Artist, 
+ * including the image, artist name and school.
+ * 
+ * This will be used on the Artists page to display a single
+ * artist wtihin the grid of artists.
+ * 
+ * Props: 
+ * - artist: the artist object with fields such as id, image, name, school etc.
+ */
 
 export default class Artwork extends Component {
-    
-    
 
     render() {
         const {id, image, name, school} = this.props.artist; 

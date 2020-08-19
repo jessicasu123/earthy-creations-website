@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import './About.css';
 import backgroundImage from '../../images/about-background-image.png';
 
+/**
+ * This is the About Page.
+ * 
+ * Static page that has an image and the Earthy Creations mission.
+ * 
+ */
 export default class About extends Component {
     render() {
         return (

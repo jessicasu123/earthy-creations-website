@@ -8,14 +8,23 @@ import ArtistArtwork from '../../components/ArtistArtwork/ArtistArtwork';
 import CategoriesUnderline from '../../images/categories_underline.png';
 import PriceUnderline from '../../images/price_underline.png';
 
+/**
+ * Artist Details Page. Has image of the artist, artist bio, and links to all of the 
+ * artwork done by the artist (both available to sell and previous pieces).
+ * 
+ * Props:
+ * - location.state: represents an artist object that is passed in through the <Link> component because clicking an Artist links to the ArtistDetails
+ *      ( see Components/Artist/Artist.js --> onClick action for clicking on an artist)
+ * 
+ * sellArtworks represents the artwork displayed under the "Artworks" header that links directly to the shop page
+ * prevArtworks represents the artwork displayed under the "Previous Pieces" header 
+ */
 
 export default class ArtistDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
             artist: this.props.location.state,
-            artworks: [],
-            allArtworks:[],
             sellArtworks:[],
             prevArtworks:[],
             artistName: this.props.location.state.name
@@ -23,24 +32,17 @@ export default class ArtistDetails extends Component {
     }
 
     componentDidMount(){
-        /*getArtworks().then((response) => {
-            const tempArtworks = this.state.allArtworks.concat(response);
-            this.setState({
-                allArtworks: tempArtworks
-            });
-        });
-        this.availableArtwork();*/
         const { artist } = this.state.artist;
         var tempSellArtworks = [];
         var tempPrevArtworks = [];
         getArtworks().then((responses) => {
             responses.forEach((response, i) => {
-                if(response.status.includes("Available")){
+                if(response.status.includes("Available")){ //if available then add it to the sellArtworks set
                     if(response.artistName.includes(artist.name)){
                         tempSellArtworks.push(response);
                     }
                 }
-                if(response.status.includes("Sold")){
+                if(response.status.includes("Sold")){ //if sold then add it to the prevArtworks set
                     if(response.artistName.includes(artist.name)){
                         console.log(response.artistName);
                         console.log(this.state.artist.name);
@@ -57,41 +59,14 @@ export default class ArtistDetails extends Component {
         });
     }
     
-    /*
-    availableArtwork(){
-        let matchingArtworks = []
-        this.state.allArtworks.forEach((artwork) => {
-            if(artwork.artistName.toLowerCase().includes(this.state.artist.name.toLowerCase())) {
-                matchingArtworks.push(artwork);
-            }
-        });
-        this.setState({artworks: matchingArtworks });
-    }*/
-    
-    /*createArtwork = artwork => (
-        <Artwork key = {artwork.id} artwork = { artwork } />
-    )*/
-    /*createArtwork = artwork => {
-        <ArtistArtwork key = {artwork.id} artwork={artwork} />
-    }
-    
-    showArtwork = () => (
-        this.state.sellArtworks.map(this.createArtwork)
-    )*/
-    
 
     render() {
         const { artist } = this.state.artist;
-        console.log(this.state.artistName)
-        console.log(this.state.artist.name);
-        console.log(artist.name);
-        console.log(this.state.artworks.map);
         this.state.sellArtworks.forEach((artwork) => {
             console.log(artwork.title);
             console.log(artwork.artistName);
         })
         return (
-            //<React.Fragment>
             <div>
                 <div className="title">
                     <Title text={artist.name.toUpperCase()} color="green" />
@@ -146,7 +121,6 @@ export default class ArtistDetails extends Component {
                 </div>
                 
             </div>
-            //</React.Fragment>
         )
     }
 }
