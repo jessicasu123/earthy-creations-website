@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import './Materials.css';
 import {Redirect} from 'react-router-dom';
 
+/**
+ * This component is responsible for rendering the materials boxes
+ * on the home page that link to the shop.
+ *
+ * This will be used on the Home page to display boxes in an arragement
+ * that link to the shop with the selected material as the default filter.
+ *
+ * Props:
+ * - none
+ */
 export default class Materials extends Component {
     constructor(props){
         super(props);

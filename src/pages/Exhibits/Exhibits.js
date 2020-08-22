@@ -4,12 +4,22 @@ import Title from '../../components/Title/Title';
 import Slider from '../../components/Slider/Slider';
 import {getExhibits} from '../../api.js';
 
+/**
+ * Exhibits page.
+ * Responsible for rendering a Slider that displays all open exhibits.
+ * Each slide on the Exhibits page links to an Exhibit.
+ *
+ * State:
+ * - images: images of each open exhibit
+ * - names: name (in all uppercase) of each open exhibit
+ * - ids: unique id of all open exhibits
+ * - dates: dates of all open exhibits
+ */
 export default class Exhibits extends Component {
     constructor(props){
         super(props);
 
         this.state = {
-            exhibits: [],
             images: [],
             names: [],
             ids: [],

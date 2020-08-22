@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import './Spotlight.css';
 import spotlight from '../../images/spotlight.png';
 
+/**
+ * This component is responsible for rendering the artist spotlight
+ * section.
+ *
+ * This will be used on the Home page to display an artist that
+ * is behing highlighted.
+ *
+ * Props:
+ * - none
+ */
 export default class Spotlight extends Component {
     render() {
         var artistStyle = {

@@ -5,6 +5,23 @@ import Arrow from './Arrow';
 import Dots from './Dots';
 import WhiteButton from '../WhiteButton/WhiteButton';
 
+/**
+ * This component is responsible for rendering a Slider,
+ * including the images, navigation dots, descriptions, and arrows.
+ *
+ * This will be used on the Home and Exhibits pages to display sliders
+ * that serve different purposes.
+ *
+ * Props:
+ * - slides: the images that will be displayed on the slider
+ * - text: text of WhiteButton (currently not being used because of
+ *   scaling issues)
+ * - path: page that the slider links to (can be the same or different
+ *   for each slide)
+ * - buttonID: id of WhiteButton (not being used at the moment)
+ * - type: type of slider
+ * - link: boolean value that indicates whether or not the slider links to anything
+ */
 export default class Slider extends Component {
     constructor(props) {
         super(props);

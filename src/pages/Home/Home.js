@@ -17,6 +17,14 @@ import Materials from '../../components/Materials/Materials';
 import Spotlight from '../../components/Spotlight/Spotlight';
 import Exhibition from '../../components/Exhibition/Exhibition';
 
+/**
+ * Home page.
+ * Responsible for rendering a Slider, linking to the shop in various places,
+ * and highlighting certain arists and exhibits.
+ *
+ * State:
+ * - none
+ */
 export default class Home extends Component {
     render() {
         const images = [

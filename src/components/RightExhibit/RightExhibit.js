@@ -3,6 +3,18 @@ import './RightExhibit.css';
 import CustomBox from '../CustomBox/CustomBox';
 import {Link} from 'react-router-dom';
 
+/**
+ * This component is responsible for rendering a single Artwork,
+ * including the image, title, artist name, and description.
+ * This particular component renders the image to the right of
+ * the description.
+ *
+ * This will be used on the Exhibit page to display a single
+ * artwork in the particular exhibit.
+ *
+ * Props:
+ * - artwork: the artwork object with fields such as id, image, title, etc.
+ */
 export default class RightExhibit extends Component {
     constructor(props){
         super(props);

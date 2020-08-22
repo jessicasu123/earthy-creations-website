@@ -6,6 +6,20 @@ import LeftExhibit from '../../components/LeftExhibit/LeftExhibit';
 import RightExhibit from '../../components/RightExhibit/RightExhibit';
 import {getArtworks, getExhibits} from '../../api.js';
 
+/**
+ * Exhibit page.
+ * Responsible for rendering a single Exhibit, the artwork in it, and a
+ * slider with various images of the exhibit.
+ *
+ * State:
+ * - name: name of the exhibit
+ * - artworks: all artworks in the exhibit, including title, artist, description, image, etc.
+ * - date: date of the exhibit
+ * - id: unique id of the exhibit
+ * - slideImages: images for the Slider at the top of the exhibit
+ * - shrink: boolean value used to adjust the page for smaller screen sizes
+ * - description: description of the exhibit
+ */
 export default class Exhibits extends Component {
     constructor(props){
         super(props);

@@ -2,6 +2,24 @@ import React, { Component } from 'react';
 import "./Slide.css"
 import {Redirect} from 'react-router-dom';
 
+/**
+ * This component is responsible for rendering a single Slide.
+ *
+ * This will be used with the Slider component to display a single
+ * image.
+ *
+ * Props:
+ * - link: boolean value that indicates whether or not the slide links
+ *   to another page
+ * - type: type of the Slider
+ * - text: (only relevant for Slider on the Exhibits page) indicates the
+ *   specific path of each Exhibit in the Slider
+ * - content: reference to the image of the slide in Contentful database
+ * - name: (only relevant for Slider on the Exhibits page) name of the
+ *   Exhibit
+ * - date: (only relevant for Slider on the Exhibits page) date of the
+ *   Exhibit
+ */
 export default class Slide extends Component {
     constructor(props){
         super(props);

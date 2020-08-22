@@ -3,7 +3,17 @@ import './Exhibition.css';
 import exhibition from '../../images/exhibition.jpg';
 import {Redirect} from 'react-router-dom';
 
-export default class Spotlight extends Component {
+/**
+ * This component is responsible for rendering the exhibition section,
+ * on the home page and linking to the corresponding exhibition.
+ *
+ * This will be used on the Home page to display a featured
+ * exhibition.
+ *
+ * Props:
+ * - none
+ */
+export default class Exhibition extends Component {
     constructor(props){
         super(props);
 

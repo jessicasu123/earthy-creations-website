@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 import './HomeCategory.css';
 import {Redirect} from 'react-router-dom';
 
+/**
+ * This component is responsible for rendering a single category
+ * with an image that links to the shop page with the corresponding
+ * filter selected automatically.
+ *
+ * This will be used on the Home page to link to the Shop page.
+ *
+ * Props:
+ * - image: the image that corresponds with the category (located
+ * in the images folder)
+ * - text: name of the category (text that will be displayed along
+ * with the image)
+ */
 export default class HomeCategory extends Component {
     constructor(props){
         super(props);

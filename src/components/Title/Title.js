@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import './Title.css';
 import OverlapBoxes from '../../components/OverlapBoxes/OverlapBoxes';
 
+/**
+ * This component is responsible for rendering the title of each page.
+ *
+ * This will be used on all pages to display the title.
+ *
+ * Props:
+ * - text: text of the title
+ * - color: color of the title's background
+ */
 export default class Title extends Component {
     constructor(props){
         super(props);
